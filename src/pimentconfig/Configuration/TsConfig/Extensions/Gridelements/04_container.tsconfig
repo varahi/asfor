@@ -1,0 +1,27 @@
+# Page TSConfig:
+
+tx_gridelements.overruleRecords = 1
+tx_gridelements.setup {
+    # ID of Element
+    Grid_Container {
+        title = Grid element - container with class
+        description = Container with additional class
+        flexformDS = FILE:EXT:pimentconfig/Configuration/FlexForms/04_grid_container.xml
+        icon = EXT:pimentconfig/Resources/Public/Icons/icon.gif
+        topLevelLayout = 1
+        config {
+            colCount = 1
+            rowCount = 1
+            rows {
+                1 {
+                    columns {
+                        1 {
+                            name = Content
+                            colPos = 0
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

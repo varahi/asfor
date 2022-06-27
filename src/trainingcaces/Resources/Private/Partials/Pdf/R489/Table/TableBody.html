@@ -1,0 +1,168 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:section name="1A">
+    <tr>
+        <v:condition.string.contains needle="R489_A11B" haystack="{exam.category.uniqueName -> f:for(each: '{candidate.exam}', as: 'exam')}">
+            <f:then>
+                <f:for each="{candidate.exam}" as="exam">
+                    <f:if condition="{exam.category.name} == 'Cat. 1A' ">
+                        <td width="35"><span style="font-weight: bold; font-size: 7pt">A1</span></td>
+                        <td width="100" style="font-weight: bold; font-size: 7pt">Transpalette Préparateur
+                            <div style="font-weight: normal; font-size: 6pt;">Hauteur &lt; 1,2m</div>
+                        </td>
+                        <f:render partial="Pdf/Table/TdPartOne" arguments="{_all}" />
+                        <f:render partial="Pdf/Table/TdPartTwo" arguments="{_all}" />
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <td width="35"><span style="font-weight: bold; font-size: 7pt">Cat. 1A</span></td>
+                <td width="100" style="font-weight: bold; font-size: 7pt">Transpalette Préparateur
+                    <div style="font-weight: normal; font-size: 6pt;">Hauteur &lt; 1,2m</div>
+                </td>
+                <td width="100"></td>
+                <td width="80"></td>
+                <td width="45"></td>
+                <td width="45"></td>
+            </f:else>
+        </v:condition.string.contains>
+    </tr>
+</f:section>
+
+<f:section name="1B">
+    <tr>
+        <v:condition.string.contains needle="R489_1B" haystack="{exam.category.uniqueName -> f:for(each: '{candidate.exam}', as: 'exam')}">
+            <f:then>
+                <f:for each="{candidate.exam}" as="exam">
+                    <f:if condition="{exam.category.name} == '1B' ">
+                        <td width="35"><span style="font-weight: bold; font-size: 7pt">1B</span></td>
+                        <td width="100" style="font-weight: bold; font-size: 7pt">Gerbeur
+                            <div style="font-weight: normal; font-size: 6pt;">Hauteur &gt; 1,2m</div>
+                        </td>
+                        <f:render partial="Pdf/Table/TdPartOne" arguments="{_all}" />
+                        <f:render partial="Pdf/Table/TdPartTwo" arguments="{_all}" />
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <td width="35"><span style="font-weight: bold; font-size: 7pt">1B</span></td>
+                <td width="100" style="font-weight: bold; font-size: 7pt">Gerbeur
+                    <div style="font-weight: normal; font-size: 6pt;">Hauteur &gt; 1,2m</div>
+                </td>
+                <td width="100"></td>
+                <td width="80"></td>
+                <td width="45"></td>
+                <td width="45"></td>
+            </f:else>
+        </v:condition.string.contains>
+    </tr>
+</f:section>
+
+<f:section name="2A">
+    <tr style="background-color: #e8e8e8;">
+        <td width="35"><span style="font-weight: bold; font-size: 7pt">2A</span></td>
+        <td width="100" style="font-weight: bold; font-size: 6pt">Porteur de Capacité &lt; 2 tonnes</td>
+        <td style="font-weight: normal; font-size: 6pt;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</f:section>
+
+<f:section name="2B">
+    <tr style="background-color: #e8e8e8;">
+        <td width="35"><span style="font-weight: bold; font-size: 7pt">2B</span></td>
+        <td width="100" style="font-weight: bold; font-size: 6pt">Tracteur de Capacité &lt; 25 tonnes</td>
+        <td style="font-weight: normal; font-size: 6pt;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</f:section>
+
+<f:section name="section3">
+    <tr>
+        <v:condition.string.contains needle="R489_3" haystack="{exam.category.uniqueName -> f:for(each: '{candidate.exam}', as: 'exam')}">
+            <f:then>
+                <f:for each="{candidate.exam}" as="exam">
+                    <f:if condition="{exam.category.name} == 'Cat. 3' ">
+                        <td width="35"><span style="font-weight: bold; font-size: 7pt">Cat. 3</span></td>
+                        <td width="100" style="font-weight: bold; font-size: 7pt">Frontal de Capacité
+                            <div style="font-weight: normal; font-size: 6pt;">&lt; 6 tonnes</div>
+                        </td>
+                        <f:render partial="Pdf/Table/TdPartOne" arguments="{_all}" />
+                        <f:render partial="Pdf/Table/TdPartTwo" arguments="{_all}" />
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <td width="35"><span style="font-weight: bold; font-size: 7pt">Cat. 3</span></td>
+                <td width="100" style="font-weight: bold; font-size: 7pt">Frontal de Capacité
+                    <div style="font-weight: normal; font-size: 6pt;">&lt; 6 tonnes</div>
+                </td>
+                <td width="100"></td>
+                <td width="80"></td>
+                <td width="45"></td>
+                <td width="45"></td>
+            </f:else>
+        </v:condition.string.contains>
+    </tr>
+</f:section>
+
+<f:section name="section4">
+    <tr style="background-color: #e8e8e8;">
+        <td width="35"><span style="font-weight: bold; font-size: 7pt">4</span></td>
+        <td width="100" style="font-weight: bold; font-size: 6pt">Frontal de Capacité &gt; 6 tonnes</td>
+        <td style="font-weight: normal; font-size: 6pt;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</f:section>
+
+<f:section name="section5">
+    <tr>
+        <v:condition.string.contains needle="R489_5" haystack="{exam.category.uniqueName -> f:for(each: '{candidate.exam}', as: 'exam')}">
+            <f:then>
+                <f:for each="{candidate.exam}" as="exam">
+                    <f:if condition="{exam.category.name} == 'Cat. 5' ">
+                        <td width="35"><span style="font-weight: bold; font-size: 7pt">Cat. 5</span></td>
+                        <td width="100" style="font-weight: bold; font-size: 7pt">A mat <br />Rétractable</td>
+                        <f:render partial="Pdf/Table/TdPartOne" arguments="{_all}" />
+                        <f:render partial="Pdf/Table/TdPartTwo" arguments="{_all}" />
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <td width="35"><span style="font-weight: bold; font-size: 7pt">Cat. 5</span></td>
+                <td width="100" style="font-weight: bold; font-size: 7pt">A mat <br />Rétractable</td>
+                <td width="100"></td>
+                <td width="80"></td>
+                <td width="45"></td>
+                <td width="45"></td>
+            </f:else>
+        </v:condition.string.contains>
+    </tr>
+</f:section>
+
+<f:section name="section6">
+    <tr style="background-color: #e8e8e8;">
+        <td width="35"><span style="font-weight: bold; font-size: 7pt">6</span></td>
+        <td width="100" style="font-weight: bold; font-size: 6pt">Porte de cond. Élevable haut. &gt; 1,2m</td>
+        <td style="font-weight: normal; font-size: 6pt;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</f:section>
+
+<f:section name="2A">
+    <tr style="background-color: #e8e8e8;">
+        <td width="35"><span style="font-weight: bold; font-size: 7pt">2A</span></td>
+        <td width="100" style="font-weight: bold; font-size: 6pt">Hors production</td>
+        <td style="font-weight: normal; font-size: 6pt;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</f:section>

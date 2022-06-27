@@ -1,0 +1,55 @@
+<tr>
+    <td>{exam.category.name}
+        <span style="font-size: 14px; display: inline;">
+            <f:if condition="{exam.subCat}">- {exam.subCat.name}</f:if>
+            <f:if condition="{exam.isOption}">- <f:translate key="tx_trainingcaces.option" /></f:if>
+        </span>
+    </td>
+    <td>
+        {exam.type.name}
+    </td>
+    <td>
+        <f:if condition="{exam.number} == '' ">
+            <f:then>
+                <input type="text" name="exam[{key.index}][number]" value="{examNumber}" style="width: 150px" class="clearable">
+            </f:then>
+            <f:else>
+                <input type="text" name="exam[{key.index}][number]" value="{exam.number}" style="width: 150px" class="clearable">
+            </f:else>
+        </f:if>
+    </td>
+
+    <f:comment>
+        <td>
+            <select name="exam[{key.index}][theoryTrainer]">
+                <option value="">{f:translate(id:'tx_trainingcaces.please_select')}</option>
+                <f:for each="{theoryTrainers}" as="theoryTrainer">
+                    <option value="{theoryTrainer.uid}"
+                            {f:if(condition: '{exam.theoryTrainer.uid}=={theoryTrainer.uid}', then: 'selected="selected"')}>{theoryTrainer.firstName} {theoryTrainer.lastName}
+                    </option>
+                </f:for>
+            </select>
+        </td>
+    </f:comment>
+
+    <td>
+        <select name="exam[{key.index}][practiceTrainer]">
+            <option value="">{f:translate(id:'tx_trainingcaces.please_select')}</option>
+            <f:for each="{practiceTrainers}" as="practiceTrainer">
+                <option value="{practiceTrainer.uid}"
+                         {f:if(condition: '{exam.practiceTrainer.uid}=={practiceTrainer.uid}', then: 'selected="selected"')}>{practiceTrainer.firstName} {practiceTrainer.lastName}
+                </option>
+            </f:for>
+        </select>
+    </td>
+    <td>
+        <input placeholder="{f:translate(id:'tx_trainingcaces.start_date')}" class="datepicker clearable-date" type="text"
+               name="exam[{key.index}][practiceTestDate]" value="{exam.practiceTestDate->f:format.date(format: '%d/%m/%Y')}" required="required">
+    </td>
+
+    <td>
+        <input placeholder="{f:translate(id:'tx_trainingcaces.valid_date')}" class="datepicker clearable-date" type="text"
+               name="exam[{key.index}][validateDate]" value="{exam.validateDate->f:format.date(format: '%d/%m/%Y')}">
+    </td>
+
+</tr>

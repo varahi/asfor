@@ -1,0 +1,167 @@
+# manually inserted CSS files
+
+page {
+    includeCSS {
+        10_fonts = https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700
+        #20_animate  = EXT:pimentconfig/Resources/Public/marble/css/animate.css
+        #30_icomoon = EXT:pimentconfig/Resources/Public/marble/css/icomoon.css
+        40_bootstrap  = EXT:pimentconfig/Resources/Public/marble/css/bootstrap.css
+        #50_flexslider  = EXT:pimentconfig/Resources/Public/marble/css/flexslider.css
+        #60_style  = EXT:pimentconfig/Resources/Public/marble/css/style.css
+
+		1 = EXT:pimentconfig/Resources/Public/Styles/cookiebar.css
+		98 = EXT:pimentconfig/Resources/Public/Styles/compass/sass/jquery-ui-1.11.scss
+		3 = EXT:pimentconfig/Resources/Public/Styles/owl.carousel.css
+		4 = EXT:pimentconfig/Resources/Public/Styles/sweet-alert.css
+		99 = EXT:pimentconfig/Resources/Public/Styles/compass/sass/styles.slider.scss
+        100 = EXT:pimentconfig/Resources/Public/Styles/compass/sass/styles.scss
+        101 = EXT:pimentconfig/Resources/Public/Styles/compass/sass/styles.responsive.scss
+		101.media = screen and (max-width: 1050px)
+        98.outputfile = EXT:pimentconfig/Resources/Public/Styles/jquery-ui-1.11
+        99.outputfile = EXT:pimentconfig/Resources/Public/Styles/styles.slider
+        100.outputfile = EXT:pimentconfig/Resources/Public/Styles/styles
+        101.outputfile = EXT:pimentconfig/Resources/Public/Styles/styles.responsive
+        #10_main = EXT:pimentconfig/Resources/Public/Styles/style.css
+    }
+
+    includeJSLibs {
+        10_jquery = https://code.jquery.com/jquery-2.2.4.min.js
+        #20_slick = EXT:pimentconfig/Resources/Public/JavaScript/main.js
+        #10_modernizr = EXT:pimentconfig/Resources/Public/marble/js/modernizr-2.6.2.min.js
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    # manually inserted JavaScript files
+    includeJSFooter {
+        #10_jquery = EXT:pimentconfig/Resources/Public/marble/js/jquery.min.js
+        #20_jquery_easing = EXT:pimentconfig/Resources/Public/marble/js/jquery.easing.1.3.js
+        #30_bootstrap = EXT:pimentconfig/Resources/Public/marble/js/bootstrap.min.js
+        #40_waypoints = EXT:pimentconfig/Resources/Public/marble/js/jquery.waypoints.min.js
+        #50_flexslider = EXT:pimentconfig/Resources/Public/marble/js/jquery.flexslider-min.js
+		
+		#1 = EXT:pimentconfig/Resources/Public/JavaScript/placeholder.js
+		2 = EXT:pimentconfig/Resources/Public/JavaScript/sweet-alert.min.js
+		3 = EXT:pimentconfig/Resources/Public/JavaScript/jquery.lazy.min.js
+		4 = EXT:pimentconfig/Resources/Public/JavaScript/iCheck.js
+		5 = EXT:pimentconfig/Resources/Public/JavaScript/jquery.blImageCenter.js
+		6 = EXT:pimentconfig/Resources/Public/JavaScript/jquery.browser.js
+		7 = EXT:pimentconfig/Resources/Public/JavaScript/jquery.cookiesbar.js
+		8 = EXT:pimentconfig/Resources/Public/JavaScript/matchMedia.js
+		9 = EXT:pimentconfig/Resources/Public/JavaScript/matchMedia.addListener.js
+		10 = EXT:pimentconfig/Resources/Public/JavaScript/enquire.js
+		11 = EXT:pimentconfig/Resources/Public/JavaScript/owl.carousel.min.js
+		12 = EXT:pimentconfig/Resources/Public/JavaScript/jquery-ui-1.11.2.min.js
+		100 = EXT:pimentconfig/Resources/Public/JavaScript/script.js
+		101 = EXT:pimentconfig/Resources/Public/JavaScript/script.responsive.js
+    }
+
+    jsFooterInline {
+        # Google Analytics
+        10 = COA
+        10 {
+            if {
+                isTrue = {$page.tracking.google.trackingID}
+            }
+            10 = TEXT
+            10.value (
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{$page.tracking.google.trackingID}', 'auto');
+            )
+            20 = TEXT
+            20 {
+                if {
+                    isTrue = {$page.tracking.google.anonymizeIp}
+                }
+
+                value (
+
+    ga('set', 'anonymizeIp', true);
+                )
+            }
+
+            90 = TEXT
+            90.value (
+
+    ga('send', 'pageview');
+            )
+        }
+    }
+
+}
+
+
+page {
+    headerData {
+        //998 = TEXT
+        //998.value =
+		
+        // Flip ahead browsing for IE10/11
+        // http://msdn.microsoft.com/en-us/library/ie/jj883726(v=vs.85).aspx
+        10 = HMENU
+        10 {
+            special = browse
+            special {
+                items = prev|next
+            }
+            1 = TMENU
+            1.NO {
+                allWrap = <link rel="prev" href="|"> |*| <link rel="next" href="|">
+                doNotLinkIt = 1
+                stdWrap {
+                    typolink {
+                        parameter.data = field:uid
+                        useCacheHash = 1
+                        returnLast = url
+                    }
+                }
+            }
+        }
+		
+		31 = TEXT
+		31.value (
+			<link rel="apple-touch-icon" sizes="57x57" href="fileadmin/images/favicon/apple-icon-57x57.png">
+			<link rel="apple-touch-icon" sizes="60x60" href="fileadmin/images/favicon/apple-icon-60x60.png">
+			<link rel="apple-touch-icon" sizes="72x72" href="fileadmin/images/favicon/apple-icon-72x72.png">
+			<link rel="apple-touch-icon" sizes="114x114" href="fileadmin/images/favicon/apple-icon-114x114.png">
+			<link rel="apple-touch-icon" sizes="120x120" href="fileadmin/images/favicon/apple-icon-120x120.png">
+			<link rel="apple-touch-icon" sizes="144x144" href="fileadmin/images/favicon/apple-icon-144x144.png">
+			<link rel="apple-touch-icon" sizes="152x152" href="fileadmin/images/favicon/apple-icon-152x152.png">
+			<link rel="apple-touch-icon" sizes="180x180" href="fileadmin/images/favicon/apple-icon-180x180.png">
+			<link rel="icon" type="image/png" sizes="192x192" href="fileadmin/images/favicon/android-icon-192x192.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="fileadmin/images/favicon/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="96x96" href="fileadmin/images/favicon/favicon-96x96.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="fileadmin/images/favicon/favicon-16x16.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="fileadmin/images/favicon/favicon-16x16.png">
+		)
+        31 >
+		
+		200 = COA
+		200 {
+			1 = TEXT
+			1.value = <meta property="og:locale" content="
+			2 = TEXT
+			2.value < config.locale_all
+			3 = TEXT
+			3.value (
+                        " />
+				<meta property="og:type" content="website" />
+				<meta property="og:description" content="{page:description}" />
+				<meta name="twitter:card" content="summary" />
+			)
+			3.insertData = 1
+		}
+    }
+}
+
+# Example for additional favicons
+page.headerData.2039 = FLUIDTEMPLATE
+page.headerData.2039 {
+    file = EXT:pimentconfig/Resources/Private/Pages/Partials/Favicons.html
+    extbase.controllerExtensionName = pimentconfig
+}

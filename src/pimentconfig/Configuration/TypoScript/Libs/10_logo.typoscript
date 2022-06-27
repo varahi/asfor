@@ -1,0 +1,35 @@
+/*
+lib.logo >
+lib.logo = COA
+lib.logo {
+    10 = IMAGE
+    10 {
+        file = EXT:pimentconfig/Resources/Public/Images/logo.svg
+        altText = {$config.header.logoTitle}
+        titleText = {$config.header.logoTitle}
+        #file.width = 100
+        #file.height = 100
+        params = class="logo"
+        stdWrap.typolink {
+            wrap = <div class="logo">|</div>
+            parameter =  {$config.navigation.rootPid}
+            ATagBeforeWrap = 1
+        }
+    }
+}
+*/
+
+lib.logo >
+lib.logo = COA
+lib.logo {
+    wrap = <div id="fh5co-logo">|</div>
+    10 = TEXT
+    10 {
+        value = Piment Rouge
+        stdWrap.typolink {
+            wrap = |
+            parameter =  {$config.navigation.rootPid}
+            ATagBeforeWrap = 1
+        }
+    }
+}

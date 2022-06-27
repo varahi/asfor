@@ -1,0 +1,16 @@
+plugin.tx_pimentconfig {
+    view {
+        # cat=plugin.tx_pimentconfig_pimentconfig/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:pimentconfig/Resources/Private/Pages/Templates/
+
+        # cat=plugin.tx_pimentconfig_pimentconfig/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:pimentconfig/Resources/Private/Pages/Partials/
+
+        # cat=plugin.tx_pimentconfig_pimentconfig/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:pimentconfig/Resources/Private/Pages/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_pimentconfig_pimentconfig//a; type=string; label=Default storage PID
+        # storagePid =
+    }
+}

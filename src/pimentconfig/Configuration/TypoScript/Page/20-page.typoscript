@@ -1,0 +1,156 @@
+#
+# The main page object and its most basic properties
+#
+page = PAGE
+page {
+
+    typeNum = 0
+
+    # adding some helpful classes to <body>
+    bodyTagCObject = COA
+    bodyTagCObject {
+
+        wrap = <body|>
+
+        # adding an ID
+        10 = TEXT
+        10 {
+            data = TSFE:id
+            noTrimWrap = | id="page-|"|
+        }
+
+        # ...and some helpful classes
+        20 =< lib.bodytag-classes
+        20.stdWrap.noTrimWrap = | class="|"|
+
+    }
+
+    # ********************************************************************************************
+    # Layout
+    # ********************************************************************************************
+    10 = FLUIDTEMPLATE
+    10 {
+
+        templateName = TEXT
+        templateName.stdWrap {
+
+            cObject = COA
+            cObject {
+
+                10 = CASE
+                10 {
+                    key.data = levelfield:-2,backend_layout_next_level,slide
+                    key.override.field = backend_layout
+
+                    pagets__1 = TEXT
+                    pagets__1.value = Index
+
+                    default = TEXT
+                    default.value =
+					
+                }
+
+            }
+            ifEmpty = Index
+        }
+
+        templateRootPaths {
+            10 = {$plugin.tx_pimentconfig.view.templateRootPath}
+        }
+        layoutRootPaths {
+            10 = {$plugin.tx_pimentconfig.view.layoutRootPath}
+        }
+        partialRootPaths {
+            10 = {$plugin.tx_pimentconfig.view.partialRootPath}
+        }
+
+		##########################
+		### DATA PREPROCESSING ###
+		##########################
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			10 {
+				levels = 3
+				special = directory
+				special.value = {$page.theme.mainmenu}
+				includeSpacer = 0
+				as = mainnavigation
+				titleField = nav_title // title
+			}
+			20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			20 {
+				entryLevel = 1
+				levels = 2
+				expandAll = 0
+				includeSpacer = 1
+				as = subnavigation
+			}
+			30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			30 {
+				special = rootline
+				special.range = 0|-1
+				includeNotInMenu = 1
+				as = breadcrumb
+				if {
+					value = {$page.theme.breadcrumbEnableLevel}
+					value {
+						insertData = 1
+						prioriCalc = 1
+						stdWrap.wrap = |-1
+					}
+					isGreaterThan {
+						data = level
+					}
+				}
+			}
+			40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			40 {
+				special = language
+				special.value = {$page.theme.language.languageValue}
+				as = languagenavigation
+				if {
+					isTrue = {$page.theme.language.languageValue}
+				}
+			}
+			50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+			50 {
+				special = {$page.theme.meta.navigationType}
+				special.value = {$page.theme.meta.navigationValue}
+				includeNotInMenu = {$page.theme.meta.includeNotInMenu}
+				as = metanavigation
+				if {
+					isTrue = {$page.theme.meta.navigationValue}
+				}
+			}
+		}
+		
+        variables {
+
+            // Render colpos sections
+            content < styles.content.get
+            content {
+                stdWrap.wrap = <!--TYPO3SEARCH_begin-->|<!--TYPO3SEARCH_end-->
+                stdWrap.required = 1
+            }
+
+            //content_slider < styles.content.get
+            //content_slider.select.where = colPos=1
+			
+            pageTitle = TEXT
+            pageTitle.field = subtitle//title
+
+        }
+    }
+}
+
+#########################
+##### DEVELOPMENT - Start
+
+# EXample application context
+#[applicationContext = Development]
+#    page.includeCSS.00_style = /assets/css/style.css
+#    page.includeJS.00_main = /assets/js/main.js
+#[end]
+
+##### DEVELOPMENT - End
+#########################

@@ -1,0 +1,167 @@
+.lightbox-std{
+    display: block;
+}
+.white-popup-block {
+    background: #FFF;
+    padding: 20px 30px;
+    text-align: left;
+    max-width: 600px;
+    margin: 40px auto;
+    position: relative;
+}
+.mfp-close-btn-in .mfp-close {
+    color: #333;
+}
+button.mfp-arrow, button.mfp-close {
+    overflow: visible;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    -webkit-appearance: none;
+    display: block;
+    outline: 0;
+    padding: 0;
+    z-index: 1046;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.mfp-close {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-decoration: none;
+    text-align: center;
+    opacity: .65;
+    filter: alpha(opacity=65);
+    padding: 0 0 18px 10px;
+    color: #FFF;
+    font-style: normal;
+    font-size: 28px;
+    font-family: Arial,Baskerville,monospace;
+}
+
+tfoot.f3-widget-paginator {
+    position: absolute;
+    margin-top: 30px;
+}
+
+#middle-office .table-std tfoot.f3-widget-paginator td {
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    padding: 0;
+    position: relative;
+}
+#middle-office .table-std tfoot.f3-widget-paginator td a {
+    background: #5868CC;
+    border: 5px solid #fff;
+    color: #fff;
+    padding: 2px 5px;
+}
+#middle-office .table-std th {
+    background: none;
+}
+
+ul.typo3-messages li.alert {
+    list-style: none !important;
+}
+p.alert-message {
+    color: #5868CC;;
+}
+
+.form-std fieldset {
+    margin: 0 0 30px 0;
+}
+.form-std fieldset .input-flex {
+    display: flex;
+}
+.form-std label {
+    font-size: 16px;
+    color: #5868CC;
+    margin: 0 0 0px 0;
+    font-family: 'Lato', arial;
+    font-weight: 700;
+    min-width: 230px;
+    display: inline-block;
+}
+.form-std input {
+    border: 1px solid #707070;
+    color: #000;
+    font-size: 12px;
+    padding: 10px 10px;
+    display: inline-block;
+}
+.input-flex span {
+    color: #000;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+span.required {
+    color: #ff0000;
+}
+
+.form-std .input-submit input {
+    background-color: #5868CC;
+    border-radius: 30px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 12px 30px;
+}
+.input-submit {
+    text-align: center;
+    margin: 0;
+}
+.ui-selectmenu-button span.ui-selectmenu-text {
+    color: inherit;
+    padding: 3px 3px 3px 4px;
+    display: block;
+    font-size: 12px;
+}
+
+select {
+    width: 55%;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #CCC;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('../Icons/table_select_column.png') 96% / 6% no-repeat #EEE;
+}
+
+form.user-form input.datepicker {
+    background: none !important;
+}
+a.text-decoration {
+    text-decoration: underline;
+}
+
+.rotate a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 0px;
+    margin-top: 20px;
+}
+
+.rotate-left a {
+    background: url('../Images/rotation_left.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.rotate-right a {
+    background: url('../Images/rotation_right.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.rotate-left {
+    float: left;
+}

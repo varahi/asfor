@@ -1,0 +1,23 @@
+<td width="100">
+    <br />
+    <f:if condition="{exam.number} == '' ">
+        <f:then>
+            {examNumber}
+            <f:render partial="Pdf/Table/TdPartOneOptions" arguments="{_all}" />
+        </f:then>
+        <f:else>
+            {exam.number}
+            <f:render partial="Pdf/Table/TdPartOneOptions" arguments="{_all}" />
+        </f:else>
+    </f:if>
+</td>
+<td width="80">
+    <br />
+    <f:if condition="{exam.practiceTrainer.firstName} || {exam.practiceTrainer.lastName}">
+        <f:then>{exam.practiceTrainer.lastName} {exam.practiceTrainer.firstName}<br /></f:then>
+        <!-- <f:else>
+            -----------------------------<br />
+            Porte-engins:
+        </f:else> -->
+    </f:if>
+</td>

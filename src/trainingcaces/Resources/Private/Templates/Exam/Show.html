@@ -1,0 +1,92 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+
+    <div id="middle-office">
+        <div id="page-pdf">
+            <div class="row">
+                <div class="left-row column">
+                    <div class="info-top">
+                        <f:if condition="{exam.candidate.photo}">
+                            <f:then>
+                                <div class="image">
+                                    <a class="image-popup-vertical"
+                                            href="{f:uri.image(src:'{exam.candidate.photo.uid}', treatIdAsReference:1, maxWidth:'1200')}">
+                                        <f:image image="{exam.candidate.photo}" width="135c" height="200c"
+                                                 title="{exam.candidate.firstName} {exam.candidate.lastName}" alt="{exam.candidate.firstName} {exam.candidate.lastName}" />
+                                    </a>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <p><f:translate key="tx_trainingcaces.no_image" /></p>
+                            </f:else>
+                        </f:if>
+                        <div class="right">
+                            <p class="title">{exam.candidate.firstName} {exam.candidate.lastName}</p>
+                            <f:if condition="{exam.candidate.dateOfBirth}">
+                                <p>
+                                    <f:translate key="tx_trainingcaces.born_the" />
+                                    <f:format.date format="{f:translate(key:'tx_trainingcaces.format_date')}">{exam.candidate.dateOfBirth}</f:format.date>
+                                </p>
+                            </f:if>
+                        </div>
+                    </div>
+                    <div class="info-bottom">
+                        <p>
+                            <a class="bt-pdf2" href="#"><f:translate key="tx_trainingcaces.print_the_map" /></a>
+                        </p>
+                        <p>
+                            <f:link.action class="bt-blue" action="list" controller="Exam"><f:translate key="tx_trainingcaces.return" /></f:link.action>
+                        </p>
+                    </div>
+                </div>
+                <div class="right-row column">
+                    <div class="content">
+                        <h1>
+                            <f:translate key="tx_trainingcaces.caces_copyright" />&reg; {exam.type.name} - Chariots à conducteur porté
+                        </h1>
+                        <table class="table-std">
+                            <thead>
+                            <tr>
+                                <th><f:translate key="tx_trainingcaces.cat" /></th>
+                                <th><f:translate key="tx_trainingcaces.type" /></th>
+                                <th><f:translate key="tx_trainingcaces.caces_number" /> <span><f:translate key="tx_trainingcaces.option" /></span></th>
+                                <th><f:translate key="tx_trainingcaces.last_name_first_name" /> <span><f:translate key="tx_trainingcaces.practical_tester" /></span></th>
+                                <th><f:translate key="tx_trainingcaces.obtain" /> <span><f:translate key="tx_trainingcaces.date_of_passage" /></span></th>
+                                <th><f:translate key="tx_trainingcaces.valid_date" /></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{exam.category.name}</td>
+                                <td><f:translate key="tx_trainingcaces.pallet_truck_preparer" /> <span>haut. < 1,20m</span></td>
+                                <td><input type="text" name="caces1"/></td>
+                                <td><input type="text" name="firstname1" value="Pierre RICHARD"/></td>
+                                <td><input type="text" class="datepicker" name="obtention1" value="21/02/2020"/></td>
+                                <td><input type="text" class="datepicker" name="validite1" value="21/02/2021"/></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+            $('.image-popup-vertical').magnificPopup({
+                type: 'image',
+                closeOnContentClick: true,
+                mainClass: 'mfp-img-mobile',
+                image: {
+                    verticalFit: true
+                }
+            });
+        });
+    </script>
+
+</f:section>
+</html>

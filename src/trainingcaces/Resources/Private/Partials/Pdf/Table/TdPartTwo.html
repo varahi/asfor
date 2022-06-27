@@ -1,0 +1,21 @@
+<td width="45">
+    <f:format.date format="%d/%m/%Y">{exam.practiceTestDate}</f:format.date>
+</td>
+<td width="45">
+    <!-- ToDo: transfer settings from TypoScript -->
+    <f:if condition="{exam.validateDate}">
+        <f:then>
+            <span style="font-weight: bold; font-size: 7pt"><f:format.date format="%d/%m/%Y">{exam.validateDate}</f:format.date></span>
+        </f:then>
+        <f:else>
+            <f:if condition="{exam.type.uid} == '1' ">
+                <f:then>
+                    <span style="font-weight: bold; font-size: 7pt"><f:format.date format="%d/%m/%Y" base="{exam.practiceTestDate}">+10 year -1 day</f:format.date></span>
+                </f:then>
+                <f:else>
+                    <span style="font-weight: bold; font-size: 7pt"><f:format.date format="%d/%m/%Y" base="{exam.practiceTestDate}">+5 year -1 day</f:format.date></span>
+                </f:else>
+            </f:if>
+        </f:else>
+    </f:if>
+</td>

@@ -1,0 +1,75 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<pdf:multiColumn>
+    <pdf:column width="50%" padding="{right: 5}">
+        <pdf:html>
+            <div style="color: #707070; font-size: 12pt;">Titulaire:<br />
+                {candidate.firstName} {candidate.lastName}
+            </div>
+            <br /><br /><br />
+            <div style=" color: #707070; font-size: 12pt;">CACES <sup>&reg;</sup> numéros:<br />
+                <f:for each="{candidate.exam->v:iterator.sort(order: 'DESC', sortBy: 'uid')}" as="exam">
+
+                    <f:if condition="{exam.type.uid} == {type} ">
+                        <f:if condition="{exam.isOption} == '1' ">
+                            <f:then>
+                                <!-- Don't show option -->
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{exam.number} == '' ">
+                                    <f:then>
+                                        {examNumber} <br />
+                                    </f:then>
+                                    <f:else>
+                                        {exam.number} <br />
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+                    </f:if>
+
+                    <f:comment>
+                        <f:if condition="{exam.type.uid} == {type} ">
+                            <f:if condition="{exam.isOption} == '1' ||
+                            {exam.category.uniqueName} == 'R486_B' ||
+                            {exam.category.uniqueName} == 'R486_C' ">
+                                <f:then>
+                                    <!-- Don't show option -->
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{exam.number} == '' ">
+                                        <f:then>
+                                            {examNumber} <br />
+                                        </f:then>
+                                        <f:else>
+                                            {exam.number} <br />
+                                        </f:else>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+                        </f:if>
+                    </f:comment>
+
+                </f:for>
+            </div>
+        </pdf:html>
+    </pdf:column>
+    <pdf:column width="50%" padding="{left: 5}">
+        <pdf:image src="EXT:trainingcaces/Resources/Public/Svg/logo-ASFOR-CCI-bleu.jpg" width="600" />
+        <pdf:html>
+            <div style="font-size: 14pt; text-align: center; color: #707070;">
+                    206 rue du Rousine - ZA la Gandière<br />
+                    05110 LA SAULCE<br />
+                    04 92 53 71 01<br />
+                    formation@asfor.net
+            </div>
+        </pdf:html>
+        <pdf:html>
+            <div style="font-size: 24pt; text-align: center; color: #707070; font-weight: bold;">
+                www.asfor.net
+            </div>
+            <div style="font-size: 36pt; text-align: center; color: #707070; font-weight: bold;">
+                CACES <sup>&reg;</sup>
+            </div>
+        </pdf:html>
+    </pdf:column>
+</pdf:multiColumn>

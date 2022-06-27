@@ -1,0 +1,114 @@
+plugin.tx_trainingcaces {
+    settings {
+        view {
+            json {
+                page = 5
+            }
+        }
+        user {
+            newUserFormPage = 10
+            storagePid = 3
+            validation {
+                image {
+
+                    # upload allowed mime types comma separated
+                    types = image/jpeg, image/jpg, image/png, image/gif, application/pdf
+                    extensions = jpg, jpeg, png, gif, pdf
+                    # upload max size 1M
+                    maxSize = 1024000
+                    # Max size for js validation
+                    max = 1024
+                }
+            }
+            upload {
+                temp = typo3temp
+            }
+            defaultPassword = {$plugin.tx_trainingcaces.user.defaultPassword}
+        }
+        trainer {
+            defaultPassword = {$plugin.tx_trainingcaces.trainer.defaultPassword}
+            defaultEmail = {$plugin.tx_trainingcaces.trainer.defaultEmail}
+        }
+        exam {
+            storagePid = 3
+            theoryResultMin = 70
+            practiceResultMin = 70
+            theoryResultMax = 100
+            practiceResultMax = 100
+
+            theoryResultMin50 = 35
+            practiceResultMin50 = 35
+            theoryResultMax50 = 50
+            practiceResultMax50 = 50
+            theoryResultMax100 = 100
+            practiceResultMax100 = 100
+
+            listPage = 1
+            loginPage = 7
+            list {
+                pagination {
+                    itemsPerPage = {$plugin.tx_trainingcaces.exam.pagination.itemsPerPage}
+                    insertAbove = {$plugin.tx_trainingcaces.exam.pagination.insertAbove}
+                    insertBelow = {$plugin.tx_trainingcaces.exam.pagination.insertBelow}
+                    maximumNumberOfLinks = {$plugin.tx_trainingcaces.exam.pagination.maximumNumberOfLinks}
+                }
+            }
+        }
+        groups {
+            candidate = {$plugin.tx_trainingcaces.groups.candidate}
+            theoryTrainer = {$plugin.tx_trainingcaces.groups.theoryTrainer}
+            practiceTrainer = {$plugin.tx_trainingcaces.groups.practiceTrainer}
+            feEditor = {$plugin.tx_trainingcaces.groups.feEditor}
+        }
+        upload {
+            userdir = /fileadmin/tx_trainingcaces/candidates
+            pdfdir = /fileadmin/tx_trainingcaces/pdf
+            csvdir = /fileadmin/tx_trainingcaces/csv
+            csvdirFileName = exam_list.csv
+            storage = 1:tx_trainingcaces/candidates
+            pdfStorage = 1:tx_trainingcaces/pdf
+        }
+        type {
+            R482 = 1
+            R486 = 2
+            R489 = 3
+            R490 = 4
+            R483 = 7
+        }
+        category {
+            R482 {
+                A = 1
+                B1 = 2
+                C1 = 3
+                D = 4
+                E = 5
+                F = 6
+                G = 7
+                PorteEngins = 8
+                Option = 31
+            }
+            R486 {
+                B = 9
+                C = 10
+                Option = 31
+            }
+            R489 {
+                1A = 11
+                3 = 12
+                5 = 13
+                //1B = 28
+            }
+            R490 {
+                General = 14
+                Option = 31
+                Telecommande = 15
+            }
+        }
+        pdf {
+            R482 = CacesR482.pdf
+            R486 = CacesR486.pdf
+            R489 = CacesR489.pdf
+            R490 = CacesR490.pdf
+        }
+    }
+}

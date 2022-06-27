@@ -1,0 +1,34 @@
+
+# -----------------------------------------------------------------------------
+# TCEFORM.tt_content
+# -----------------------------------------------------------------------------
+#
+TCEFORM.tt_content {
+    header_layout {
+        //removeItems = 0,100
+        altLabels {
+            1 = H1
+            2 = H2
+            3 = H3
+            4 = H4
+            5 = H5
+        }
+        addItems {
+            10 = LLL:EXT:pimentconfig/Resources/Private/Language/locallang_db.xlf:tt_content.header_custom
+        }
+    }
+
+    frame_class {
+        disableNoMatchingValueElement = 1
+        # remove "Invisible"
+        removeItems = 1
+        # rename "Frame 1", "Frame 2"
+        altLabels {
+
+        }
+        addItems {
+            // Example frame class
+            //10 = LLL:EXT:pimentconfig/Resources/Private/Language/locallang_db.xlf:tt_content.sectionframe.hide_on_mobile
+        }
+    }
+}

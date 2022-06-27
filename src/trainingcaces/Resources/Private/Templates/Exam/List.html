@@ -1,0 +1,148 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <f:flashMessages />
+    <f:render partial="FormErrors" />
+
+    <div class="login-link">
+        <f:link.page pageUid="{settings.exam.loginPage}">
+            <f:form.submit value="{f:translate(id:'tx_trainingcaces.login_form')}" />
+        </f:link.page>
+    </div>
+    <br />
+
+    <f:security.ifHasRole role="{settings.groups.feEditor}">
+        <div class="">
+            <f:link.page pageUid="{settings.user.newUserFormPage}">
+                <f:form.submit value="{f:translate(id:'tx_trainingcaces.create_new_user')}" />
+            </f:link.page>
+        </div>
+    </f:security.ifHasRole>
+
+    <f:if condition="{exams}">
+        <f:then>
+            <div id="middle-office">
+                <div id="search-top">
+                    <f:form
+                            id="form"
+                            action="list"
+                            controller="Exam"
+                            name="exam"
+                            object="{exam}"
+                            class="form-std" >
+
+                        <div class="input-flex">
+                            <f:if condition="{startDateIsset} == 1 && {endDateIsset} == 1">
+                                <f:then>
+                                    <div><f:form.textfield class="datepicker" name="startDate" placeholder="{startDate}" value="{startDate}" /></div>
+                                    <div><f:form.textfield class="datepicker" name="endDate" placeholder="{endDate}" value="{endDate}" /></div>
+                                </f:then>
+                                <f:else if="{startDateIsset} == 1">
+                                    <div><f:form.textfield class="datepicker" name="startDate" placeholder="{startDate}" value="{startDate}" /></div>
+                                    <div><f:form.textfield class="datepicker" name="endDate" placeholder="{f:translate(id:'tx_trainingcaces.end_date')}" /></div>
+                                </f:else>
+                                <f:else if="{endDateIsset} == 1">
+                                    <div><f:form.textfield class="datepicker" name="startDate" placeholder="{f:translate(id:'tx_trainingcaces.start_date')}" /></div>
+                                    <div><f:form.textfield class="datepicker" name="endDate" placeholder="{endDate}" value="{endDate}" /></div>
+                                </f:else>
+                                <f:else>
+                                    <div><f:form.textfield class="datepicker" name="startDate" placeholder="{f:translate(id:'tx_trainingcaces.start_date')}" /></div>
+                                    <div><f:form.textfield class="datepicker" name="endDate" placeholder="{f:translate(id:'tx_trainingcaces.end_date')}" /></div>
+                                </f:else>
+                            </f:if>
+
+                            <div class="input-submit"><f:form.submit value="{f:translate(id:'tx_trainingcaces.validate')}" /></div>
+                            <div>
+                                <f:link.action class="bt-excel" action="export" title="{f:translate(id:'tx_trainingcaces.export_exams')}" pageType="133799">
+                                    <f:translate key="tx_trainingcaces.export_excel" />
+                                </f:link.action>
+                            </div>
+                            <div class="bt-right">
+                                <f:security.ifAuthenticated>
+                                    <f:then>
+                                        <a id="delete" title="{f:translate(id:'tx_trainingcaces.delete_selected')}" class="bt-delete"><f:translate key="tx_trainingcaces.delete" /></a>
+                                    </f:then>
+                                    <f:else>
+                                        <f:link.page pageUid="{settings.exam.loginPage}" class="bt-delete">
+                                            <f:translate key="tx_trainingcaces.delete" />
+                                        </f:link.page>
+                                    </f:else>
+                                </f:security.ifAuthenticated>
+                                <f:security.ifAuthenticated>
+                                    <f:then>
+                                        <a id="edit" title="{f:translate(id:'tx_trainingcaces.edit_selected')}" class="bt-edit ajax-popup-align-top" data-dialog="lightbox-edit">
+                                            <f:translate key="tx_trainingcaces.edit" />
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <a id="edit" title="{f:translate(id:'tx_trainingcaces.edit_selected')}" class="bt-edit" data-dialog="lightbox-edit">
+                                            <f:translate key="tx_trainingcaces.edit" />
+                                        </a>
+                                    </f:else>
+                                </f:security.ifAuthenticated>
+                                <a id="pdf" title="{f:translate(id:'tx_trainingcaces.show_selected')}" class="bt-pdf"><f:translate key="tx_trainingcaces.export_pdf" /></a>
+                            </div>
+                        </div>
+                    </f:form>
+                </div>
+                <div id="table-middle">
+                    <table class="table-std" id="sort-table">
+                        <f:render partial="Exam/Table/Thead" arguments="{_all}" />
+                        <f:if condition="{exams->f:count()} > {settings.exam.list.pagination.itemsPerPage}">
+                            <f:then>
+                                <f:widget.paginate objects="{exams}" as="paginatedExams" configuration="{settings.exam.list.pagination}">
+                                    <f:for each="{paginatedExams}" as="exam">
+                                        <f:render partial="Exam/Table/Properties" arguments="{_all}" />
+                                    </f:for>
+                                </f:widget.paginate>
+                            </f:then>
+                            <f:else>
+                                <f:for each="{exams}" as="exam">
+                                    <f:render partial="Exam/Table/Properties" arguments="{_all}" />
+                                </f:for>
+                            </f:else>
+                        </f:if>
+                    </table>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <p><f:translate key="tx_trainingcaces.no_records" /></p>
+        </f:else>
+    </f:if>
+    <script>
+        $(document).ready(function() {
+            $('.ajax-popup-align-top').magnificPopup({
+                type: 'ajax',
+                alignTop: true,
+                overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
+            });
+
+            $('.radiogroup').change(function(e) {
+                const $this = $(this), $link = $("#pdf");
+                $link.html($this.val());
+                $link.attr("href", $this.attr("data-url-show"));
+
+                const $thisedit = $(this), $linkedit = $("#edit");
+                $linkedit.html($thisedit.val());
+                //$linkedit.addClass("ajax-popup-align-top");
+                $linkedit.attr("href", $thisedit.attr("data-url-edit"));
+
+                const $thisdel = $(this), $linkdel = $("#delete");
+                $linkdel.html($thisdel.val());
+                $linkdel.attr('onclick', 'return confirm(\'Are you sure you want to delete this exam record?\');');
+                $linkdel.attr("href", $thisdel.attr("data-url-delete"));
+            });
+
+            $('#sort-table').DataTable({
+                paging: false,
+                searching: false,
+                info: false
+            });
+
+        });
+    </script>
+
+</f:section>
+</html>

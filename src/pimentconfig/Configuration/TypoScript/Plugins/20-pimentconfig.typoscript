@@ -1,0 +1,31 @@
+#
+# Templates and settings for EXT:pimentconfig based plugins
+#
+plugin.tx_pimentconfig {
+    view {
+        templateRootPaths.0 = {$plugin.tx_pimentconfig.view.templateRootPath}
+        partialRootPaths.0 = {$plugin.tx_pimentconfig.view.partialRootPath}
+        layoutRootPaths.0 = {$plugin.tx_pimentconfig.view.layoutRootPath}
+    }
+
+    persistence {
+        storagePid = {$plugin.tx_pimentconfig.persistence.storagePid}
+    }
+
+    features {
+        # uncomment the following line to enable the new Property Mapper.
+        # rewrittenPropertyMapper = 1
+    }
+}
+
+lib.contentElement {
+    templateRootPaths {
+        200 = EXT:pimentconfig/Resources/Private/Content/Templates/
+    }
+    partialRootPaths {
+        200 = EXT:pimentconfig/Resources/Private/Content/Partials/
+    }
+    layoutRootPaths {
+        200 = EXT:pimentconfig/Resources/Private/Content/Layouts/
+    }
+}

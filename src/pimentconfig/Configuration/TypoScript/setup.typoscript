@@ -1,0 +1,6 @@
+#
+# This is the very root template for any typoscript action
+#
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:pimentconfig/Configuration/TypoScript/Page/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:pimentconfig/Configuration/TypoScript/Libs/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:pimentconfig/Configuration/TypoScript/Navigation/" extensions="typoscript">

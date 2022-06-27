@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:pdf="http://typo3.org/ns/Bithost/Pdfviewhelpers/ViewHelpers"
+      xsi:schemaLocation="http://typo3.org/ns/Bithost/Pdfviewhelpers/ViewHelpers https://pdfviewhelpers.bithost.ch/schema/2.3.xsd"
+      data-namespace-typo3-fluid="true">
+
+
+<pdf:multiColumn>
+    <pdf:column width="26%" padding="{right: 5}">
+        <f:render partial="Pdf/Content/Image" arguments="{_all}" />
+        <f:render partial="Pdf/Content/LeftColumn" arguments="{_all}" />
+    </pdf:column>
+    <pdf:column width="74%" padding="{left: 5}">
+        <pdf:html styleSheet="EXT:trainingcaces/Resources/Public/Css/pdf-styles.css">
+            <h1 style="text-align: center;">CACES <sup>&reg;</sup> R.482 - Engins de Chantier</h1>
+            <table class="table" cellpadding="3">
+                <thead>
+                <f:render partial="Pdf/Table/TableHead" />
+                </thead>
+                <tbody>
+                <f:render partial="Pdf/R482/Table/TableBody" arguments="{candidate: candidate, examNumber: examNumber}"  section="A" />
+                <f:render partial="Pdf/R482/Table/TableBody" arguments="{candidate: candidate, examNumber: examNumber}"  section="B1" />
+                <f:render partial="Pdf/R482/Table/TableBody" section="B2" />
+                <f:render partial="Pdf/R482/Table/TableBody" section="B3" />
+                <f:render partial="Pdf/R482/Table/TableBody" arguments="{candidate: candidate, examNumber: examNumber}"  section="C1" />
+                <f:render partial="Pdf/R482/Table/TableBody" section="C2" />
+                <f:render partial="Pdf/R482/Table/TableBody" section="C3" />
+                <f:render partial="Pdf/R482/Table/TableBody" arguments="{candidate: candidate, examNumber: examNumber}"  section="D" />
+                <f:render partial="Pdf/R482/Table/TableBody" arguments="{candidate: candidate, examNumber: examNumber}"  section="E" />
+                <f:render partial="Pdf/R482/Table/TableBody" arguments="{candidate: candidate, examNumber: examNumber}"  section="F" />
+                <f:render partial="Pdf/R482/Table/TableBody" arguments="{candidate: candidate, examNumber: examNumber}"  section="G" />
+                <f:comment>
+                    <f:render partial="Pdf/R482/Table/TableBody" arguments="{candidate: candidate, examNumber: examNumber}"  section="Option" />
+                </f:comment>
+                </tbody>
+            </table>
+            <f:render partial="Pdf/Content/Footer" />
+        </pdf:html>
+    </pdf:column>
+</pdf:multiColumn>
+
+</html>

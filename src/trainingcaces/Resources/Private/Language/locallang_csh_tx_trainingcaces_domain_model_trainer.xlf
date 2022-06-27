@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:trainingcaces/Resources/Private/Language/locallang_csh" date="2020-07-01T11:06:02Z" product-name="trainingcaces">
+		<header/>
+		<body>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="first_name.description" resname="first_name.description">
+				<source>firstName</source>
+			</trans-unit>
+			<trans-unit id="last_name.description" resname="last_name.description">
+				<source>lastName</source>
+			</trans-unit>
+			<trans-unit id="date_of_birth.description" resname="date_of_birth.description">
+				<source>dateOfBirth</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

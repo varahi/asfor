@@ -1,0 +1,137 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="typo3conf/ext/trainingcaces/Resources/Public/JavaScript/dependableList.js"></script>
+<script src="typo3conf/ext/trainingcaces/Resources/Public/JavaScript/script.js"></script>
+
+<f:flashMessages />
+<f:render partial="FormErrors" />
+
+<fieldset>
+
+	<div class="input-flex">
+		<label for="entreprise"><f:translate key="tx_trainingcaces.client_company" /><span class="required"> *</span> :</label>
+		<f:form.textfield id="entreprise" property="candidate.company" />
+	</div>
+
+	<div class="input-flex">
+		<label for="lieu"><f:translate key="tx_trainingcaces.test_location" /><span class="required"> *</span> :</label>
+		<input id="lieu" type="text" name="place" value="{exam.place.name}">
+	</div>
+
+	<f:comment>
+		<div class="input-flex">
+			<label for="lieu"><f:translate key="tx_trainingcaces.test_location" /><span class="required"> *</span> :</label>
+			<f:form.select
+					id="lieu"
+					property="place"
+					options="{placeList}"
+					prependOptionLabel="{f:translate(id:'tx_trainingcaces.please_select')}"
+					optionLabelField="name"
+					optionValueField="uid"
+					required="1" />
+		</div>
+	</f:comment>
+
+
+	<div class="input-flex">
+		<label for="candidat"><f:translate key="tx_trainingcaces.candidate" /><span class="required"> *</span> :</label>
+		<span>{exam.candidate.firstName} {exam.candidate.lastName}</span>
+	</div>
+
+	<div class="input-flex">
+		<label for="naissance"><f:translate key="tx_trainingcaces.date_of_birth" /><span class="required"> *</span> :</label>
+			<f:form.textfield class="datepicker" id="naissance"
+							  property="candidate.dateOfBirth" value="{exam.candidate.dateOfBirth->f:format.date(format: '%d/%m/%Y')}" required="1" />
+	</div>
+</fieldset>
+
+<fieldset>
+		<div class="input-flex">
+			<label for="formateurTheo"><f:translate key="tx_trainingcaces.theory_trainer" /> :</label>
+			<select id="formateurTheo" name="tx_trainingcaces_trainingcaces[theoryTrainer]">
+				<option value="0"><f:translate key="tx_trainingcaces.please_select" /></option>
+				<f:for each="{theoryTrainerList}" as="theoryTrainer">
+					<option value="{theoryTrainer.uid}" {f:if(condition: '{exam.theoryTrainer.uid}=={theoryTrainer.uid}', then: 'selected="selected"')}>{theoryTrainer.name}</option>
+				</f:for>
+			</select>
+		</div>
+
+	<div class="input-flex">
+		<label for="dateTheo"><f:translate key="tx_trainingcaces.theory_test_date" /> :</label>
+		<f:form.textfield class="datepicker" id="dateTheo" name="theoryTestDate" value="{exam.theoryTestDate->f:format.date(format: '%d/%m/%Y')}" />
+	</div>
+	<div class="input-flex">
+		<label for="resultatTheo"><f:translate key="tx_trainingcaces.theory_test_result" /> :</label>
+		<f:form.textfield property="theoryResult" id="resultatTheo" />
+	</div>
+</fieldset>
+<fieldset>
+
+	<div class="input-flex">
+		<label for="formateurPrat"><f:translate key="tx_trainingcaces.practice_trainer" /> :</label>
+		<select id="formateurPrat" name="tx_trainingcaces_trainingcaces[practiceTrainer]">
+			<option value="0"><f:translate key="tx_trainingcaces.please_select" /></option>
+			<f:for each="{practiceTrainerList}" as="practiceTrainer">
+				<option value="{practiceTrainer.uid}" {f:if(condition: '{exam.practiceTrainer.uid}=={practiceTrainer.uid}', then: 'selected="selected"')}>{practiceTrainer.name}</option>
+			</f:for>
+		</select>
+	</div>
+
+	<div class="input-flex">
+		<label for="datePrat"><f:translate key="tx_trainingcaces.practice_test_date" /> :</label>
+		<f:form.textfield class="datepicker" id="datePrat" name="practiceTestDate" value="{exam.practiceTestDate->f:format.date(format: '%d/%m/%Y')}" />
+	</div>
+	<div class="input-flex">
+		<label for="resultatPrat"><f:translate key="tx_trainingcaces.practice_test_result" />:</label>
+		<f:form.textfield property="practiceResult" id="resultatPrat" />
+	</div>
+</fieldset>
+
+<fieldset>
+	<div class="input-flex">
+		<label for="first_list"><f:translate key="tx_trainingcaces.type_caces" /><span class="required"> *</span> :</label>
+		<f:form.select
+				id="first_list"
+				property="type"
+				options="{typeList}"
+				prependOptionLabel="{f:translate(id:'tx_trainingcaces.please_select')}"
+				optionLabelField="name"
+				optionValueField="uid" />
+
+	</div>
+	<div class="input-flex">
+		<label for="second_list"><f:translate key="tx_trainingcaces.category_caces" /><span class="required"> *</span> :</label>
+		<select id="second_list" name="tx_trainingcaces_trainingcaces[exam][category]">
+			<f:for each="{categoriesList}" as="category">
+				<option data-list-id="{category.type.uid}"  value="{category.uid}"
+						{f:if(condition: '{exam.category.uid}=={category.uid}', then: 'selected="selected"')}>{category.name}</option>
+			</f:for>
+		</select>
+	</div>
+	<div class="input-flex">
+		<label for="second_list"><f:translate key="tx_trainingcaces.subcategory_caces" /> :</label>
+		<select id="second_list" name="tx_trainingcaces_trainingcaces[subCategory]">
+			<option value="0" {f:if(condition: '{exam.subCat.uid}=={subcategory.uid}', then: 'selected="selected"')}>{f:translate(id:'tx_trainingcaces.no_subcategory')}</option>
+			<f:for each="{subCategoriesList}" as="subcategory">
+				<option value="{subcategory.uid}" {f:if(condition: '{exam.subCat.uid}=={subcategory.uid}', then: 'selected="selected"')}>{subcategory.name}</option>
+			</f:for>
+		</select>
+	</div>
+	<div class="input-flex">
+		<label for="second_list"><f:translate key="tx_trainingcaces.is_option" /> :</label>
+		<f:form.checkbox value="1" property="isOption" checked="{f:if(condition: '{exam.isOption}==true', then: 'checked')}" />
+	</div>
+	<div class="input-flex">
+		<label for="second_list"><f:translate key="tx_trainingcaces.is_practice" /> :</label>
+		<f:form.checkbox value="1" property="isPractice" checked="{f:if(condition: '{exam.isPractice}==true', then: 'checked')}" />
+	</div>
+
+</fieldset>
+
+<script type="text/javascript">
+	createDependableList ( '#first_list', '#second_list' );
+</script>
+
+
+</html>

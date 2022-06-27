@@ -1,0 +1,14 @@
+# cat=basic/enable; type=string; label= Json Description
+#jsonDescription = json array of exams
+
+# cat=basic/enable/030; type=boolean; label= Disable Log: If you don't want to save each change of an fe_user, you can disable the logfile
+#disableLog = 0
+
+# cat=basic/enable; type=int; label=Front end user pid (Page ID)
+userPid = 0
+
+# cat=basic/enable; type=int; label=Trainer pid (Page ID)
+trainerPid = 0
+
+# cat=basic/enable; type=int; label=Exams pid (Page ID)
+storagePid = 0

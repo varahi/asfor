@@ -1,0 +1,18 @@
+<div class="body-mobile">
+    <f:render partial="Header" arguments="{_all}" />
+	
+	<div id="wrap">
+        <f:if condition="{data.hide_content_class} == 1">
+            <f:then>
+                <f:render partial="Breadcrumb" arguments="{_all}" />
+                <f:render section="section_content" />
+                <f:cObject typoscriptObjectPath="lib.yaShare" />
+            </f:then>
+            <f:else>
+				<f:render section="section_content" />
+            </f:else>
+        </f:if>
+	</div>
+</div>
+
+

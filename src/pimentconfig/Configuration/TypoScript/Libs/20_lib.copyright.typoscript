@@ -1,0 +1,15 @@
+lib.copyright >
+lib.copyright = COA
+lib.copyright {
+    wrap = <p><small>|</small></p>
+    10 = TEXT
+    10 {
+        wrap = <span>|</span>
+        value = {$config.footer.copyright}
+    }
+    20 = TEXT
+    20 {
+        value = {$config.footer.developer}
+        wrap = <span>|</span>
+    }
+}

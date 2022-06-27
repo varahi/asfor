@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:pdf="http://typo3.org/ns/Bithost/Pdfviewhelpers/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+
+    <f:flashMessages />
+    <f:render partial="FormErrors" />
+
+    <h1><f:translate key="tx_trainingcaces.edit_user" /> {candidate.firstName} {candidate.lastName}</h1>
+
+    <div style="max-width: 800px; margin-top: 50px;">
+        <f:form class="form-std"
+                action="update"
+                controller="FrontendUser"
+                name="candidate"
+                object="{candidate}">
+
+            <fieldset>
+
+                <div class="input-flex">
+                    <label for="firstName"><f:translate key="tx_trainingcaces.first_name" /><span class="required"> *</span> :</label><br />
+                    <f:form.textfield property="firstName" id="firstName" />
+                </div>
+
+                <div class="input-flex">
+                    <label for="lastName"><f:translate key="tx_trainingcaces.last_name" /><span class="required"> *</span> :</label><br />
+                    <f:form.textfield property="lastName" id="lastName" />
+                </div>
+
+                <div class="input-flex">
+                    <label for="naissance"><f:translate key="tx_trainingcaces.date_of_birth" /><span class="required"> *</span> :</label>
+                    <f:form.textfield class="datepicker" id="naissance"
+                                      property="dateOfBirth" value="{candidate.dateOfBirth->f:format.date(format: '%d/%m/%Y')}" required="1" />
+                </div>
+
+                <div class="input-flex">
+                    <label for="company"><f:translate key="tx_trainingcaces_domain_model_exam.enterprice_client" /><span class="required"> *</span> :</label><br />
+                    <f:form.textfield property="company" id="company" />
+                </div>
+
+                <div class="input-flex">
+                    <label for="email"><f:translate key="tx_trainingcaces.email" /><span class="required"> *</span> :</label>
+                    <f:form.textfield property="email" id="email" />
+                </div>
+
+                <f:comment>
+                    <div class="input-flex">
+                        <label for="password"><f:translate key="tx_trainingcaces.password" /><span class="required"> *</span> :</label>
+                        <f:form.textfield property="password" id="password" />
+                    </div>
+                </f:comment>
+
+            </fieldset>
+
+            <div class="input-submit"><f:form.submit value="{f:translate(id:'tx_trainingcaces.validate')}" /></div>
+
+        </f:form>
+    </div>
+
+
+
+</f:section>
+
+</html>

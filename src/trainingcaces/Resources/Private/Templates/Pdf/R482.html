@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:pdf="http://typo3.org/ns/Bithost/Pdfviewhelpers/ViewHelpers"
+      xsi:schemaLocation="http://typo3.org/ns/Bithost/Pdfviewhelpers/ViewHelpers https://pdfviewhelpers.bithost.ch/schema/2.3.xsd"
+      data-namespace-typo3-fluid="true">
+
+<pdf:document outputDestination="F"
+              outputPath="fileadmin/tx_trainingcaces/pdf/CacesR482.pdf"
+              sourceFile="EXT:trainingcaces/Resources/Public/pdf-request.pdf">
+
+    <pdf:page margin="{top: 5, right: 10, bottom: 10, left: 10}" autoPageBreak="1" orientation="portrait" format="A4">
+        <f:render partial="Pdf/Content/CoverPartOne" arguments="{_all}" />
+        <f:render partial="Pdf/Content/CoverPartTwo" arguments="{_all}" />
+        <pdf:html><br /><br /><br /></pdf:html>
+        <f:render partial="Pdf/Content/CoverPartOne" arguments="{_all}" />
+        <f:render partial="Pdf/Content/CoverPartTwo" arguments="{_all}" />
+    </pdf:page>
+
+    <pdf:page importPage="1" margin="{top: 5, right: 5, bottom: 10, left: 5}" autoPageBreak="1" orientation="portrait" format="A4">
+        <f:render partial="Pdf/R482/Columns" arguments="{_all}" />
+        <pdf:html><br /><br /></pdf:html>
+        <f:render partial="Pdf/R482/Columns" arguments="{_all}" />
+    </pdf:page>
+</pdf:document>
+
+</html>
+

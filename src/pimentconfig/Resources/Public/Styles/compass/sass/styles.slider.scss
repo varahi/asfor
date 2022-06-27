@@ -1,0 +1,82 @@
+@import "styles.variable.scss";
+@import "mixin.scss";
+
+/** SLIDESHOW **/
+.owl-carousel{
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	.owl-stage-outer{
+		position: relative;
+	}
+	.item{
+		.image{
+			img{
+				width: auto;
+				height: auto;
+				max-width: 100%;
+			}
+		}
+		.caption{
+			p{
+				font-size: 14px;
+				padding: 7px 0;
+			}
+		}
+	}
+	.owl-nav {
+		height: auto;
+		z-index: 15;
+		.owl-prev, .owl-next{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 55px;
+			height: 100%;
+			text-indent: -9999px;
+			@include transition(all, 0.3s, 0s);
+			padding: 0;
+			box-shadow: none;
+			background: none;
+			border-radius: 0;
+		}
+		.owl-next{
+			background: url('../images/arrow_slider_right.svg') no-repeat center center;
+			background-size: 100%;
+			right: 0;
+		}
+		.owl-prev{
+			background: url('../images/arrow_slider_left.svg') no-repeat center center;
+			background-size: 100%;
+			left: 0;
+		}
+	}
+	.owl-dots{
+		height: auto;
+		bottom: 40px;
+		width: 100%;
+		z-index: 15;
+		position: absolute;
+		text-align: center;
+		@include transition(all, 0.3s, 0s);
+				
+		.owl-dot{
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			border: 2px solid #fff;
+			margin: 0 3px;
+			border-radius: 15px;
+			@include transition(all, 0.3s, 0s);
+			padding: 0;
+			box-shadow: none;
+			background: none;
+			border-radius: 0;
+			&.active, &:hover{
+				background-color: $blue;
+			}
+		}
+	}
+}
+
+/** FIN SLIDESHOW HOME **/

@@ -1,0 +1,101 @@
+plugin.tx_trainingcaces.features.requireCHashArgumentForActionArguments = 0
+
+# TypoScript for page type:
+# [request.getQueryParams()['tx_trainingcaces_trainingcacesapi'] && request.getQueryParams()['tx_trainingcaces_trainingcacesapi']['exam'] > 0]
+# [getTSFE().id == {$plugin.tx_trainingcaces.view.json.page}]
+
+[request.getQueryParams()['tx_trainingcaces_trainingcacesapi']]
+    page = PAGE
+    page {
+        config {
+            disableAllHeaderCode = 1
+            debug = 0
+            no_cache = 1
+            additionalHeaders {
+                10 {
+                    header = Content-Type: application/json
+                    replace = 1
+                }
+            }
+        }
+        10 = USER
+        10 {
+            userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+            extensionName = Trainingcaces
+            pluginName = TrainingcacesApi
+            vendorName = T3Dev
+            Controller = Json
+            action = auth
+            switchableControllerActions {
+                Json {
+                    1 = auth
+                    2 = testers
+                    3 = students
+                    4 = updateUser
+                }
+            }
+        }
+    }
+[global]
+
+# Content for get ajax
+editExamAjax = PAGE
+editExamAjax {
+    typeNum = 133798
+    config {
+        disableAllHeaderCode = 1
+        replace = 1
+        no_cache = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        debug = 0
+        contentObjectExceptionHandler = 0
+    }
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Trainingcaces
+        pluginName = Trainingcaces
+        vendorName = T3Dev
+        Controller = Exam
+        action = editAjax
+        switchableControllerActions {
+            Exam {
+                1 = editAjax
+            }
+        }
+    }
+}
+
+# Set headers for download action
+download = PAGE
+download  {
+    typeNum = 133799
+    config {
+        disableAllHeaderCode = 1
+        debug = 0
+        no_cache = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        additionalHeaders {
+            10 {
+                header = Content-Type: application/octet-stream
+                replace = 1
+            }
+        }
+    }
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Trainingcaces
+        pluginName = Trainingcaces
+        vendorName = T3Dev
+        Controller = Exam
+        action = export
+        switchableControllerActions {
+            Exam {
+                1 = export
+            }
+        }
+    }
+}

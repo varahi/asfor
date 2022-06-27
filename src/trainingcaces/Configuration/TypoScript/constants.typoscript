@@ -1,0 +1,43 @@
+
+plugin.tx_trainingcaces {
+    view {
+        # cat=plugin.tx_trainingcaces_trainingcaces/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:trainingcaces/Resources/Private/Templates/
+        # cat=plugin.tx_trainingcaces_trainingcaces/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:trainingcaces/Resources/Private/Partials/
+        # cat=plugin.tx_trainingcaces_trainingcaces/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:trainingcaces/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_trainingcaces_trainingcaces//a; type=string; label=Default storage PID
+        storagePid =
+    }
+
+    view {
+        json {
+            // Set page where will be installed pligin with JSON output
+            page = 5
+        }
+    }
+    groups {
+        candidate = 1
+        theoryTrainer = 2
+        practiceTrainer = 3
+        feEditor = 4
+    }
+    user {
+        defaultPassword = 12345
+    }
+    trainer {
+        defaultPassword = 12345
+        defaultEmail = trainer@asfor.net
+    }
+    exam {
+        pagination {
+            itemsPerPage = 5
+            insertAbove = 0
+            insertBelow = 1
+            maximumNumberOfLinks =10
+        }
+    }
+}

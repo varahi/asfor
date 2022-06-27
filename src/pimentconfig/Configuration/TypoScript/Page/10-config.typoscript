@@ -1,0 +1,79 @@
+config {
+
+    #admPanel    = {$config.adminPanel}
+    #debug      = {$config.debug}
+
+    # basic language setup
+    language = {$config.language}
+    locale_all = {$config.locale}
+    sys_language_uid = {$config.sys_language_uid}
+    htmlTag_setParams = lang="{$config.language}" dir="ltr"
+    htmlTag_setParams.insertData = 1
+
+    linkVars = L
+    sys_language_mode = content_fallback
+    sys_language_overlay = 1
+
+    # page title / meta title
+    pageTitleFirst = 1
+    pageTitleSeparator = –
+    pageTitleSeparator.noTrimWrap = | | |
+
+    # new TYPO3 v9 PageTitle Handling
+    /*
+    pageTitleProviders {
+    tx_pimentconfig_pagetitle {
+    provider = T3Dev\pimentconfig\Provider\PageTitleProvider
+    before = record
+    }
+    }
+    */
+
+    # URL setup
+    absRefPrefix = auto
+
+    # some css and js cleanups
+    removeDefaultJS = external
+    inlineStyle2TempFile = 1
+    moveJsFromHeaderToFooter = 0
+    setJS_openPic = 0
+
+    # CSS handling
+    compressCss = 1
+    concatenateCss = 1
+
+    # JS handling
+    compressJs = 1
+    concatenateJs = 1
+
+    # for browsers and proxies
+    sendCacheHeaders = 1
+
+    # disable image upscaling
+    noScaleUp = 1
+
+}
+
+//[getTSFE().beUserLogin > 0]
+[getTSFE().isBackendUserLoggedIn()]
+    config {
+        compressCss = 0
+        concatenateCss = 0
+        compressJs = 0
+        concatenateJs = 0
+    }
+[global]
+
+page.config.headerComment (
+  Programming by Dmitry Vasilev - T3Dev company info@t3dev.ru
+  ___________________________________
+)
+
+# Admin Panel
+#page.config.admPanel = 1
+#config.admPanel = 1
+#config.admPanel.enable.all = 1
+
+# Front end editing
+config.frontend_editing = 1
+#page.config.frontend_editing = 1

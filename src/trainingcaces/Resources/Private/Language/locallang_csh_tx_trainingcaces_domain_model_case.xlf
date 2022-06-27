@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:trainingcaces/Resources/Private/Language/locallang_csh" date="2020-06-27T10:44:15Z" product-name="trainingcaces">
+		<header/>
+		<body>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="category.description" resname="category.description">
+				<source>category</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

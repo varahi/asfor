@@ -1,0 +1,133 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:section name="R482">
+    <h1>
+        <f:translate key="tx_trainingcaces.caces_copyright" />&reg; R.482 - <f:translate key="tx_trainingcaces.construction_machinery" />
+    </h1>
+    <f:form class="user-form"
+            action="updateExamsArray"
+            controller="FrontendUser"
+            name="candidate"
+            object="{candidate}"
+            arguments="{exams: exams}">
+
+        <f:for each="{exams}" as="exam" iteration="key">
+            <f:if condition="{exam.type.uid} == {settings.type.R482}">
+                <input type="hidden" name="exam[{key.index}][uid]" value="{exam.uid}" />
+            </f:if>
+        </f:for>
+
+        <table class="table-std">
+            <f:render partial="User/ExamTableHead" arguments="{_all}" />
+            <tbody>
+            <f:for each="{exams}" as="exam" iteration="key">
+                <f:if condition="{exam.type.uid} == {settings.type.R482}">
+                    <f:render partial="User/ExamProperties" arguments="{_all}" />
+                </f:if>
+            </f:for>
+            </tbody>
+        </table>
+        <f:form.submit value="{f:translate(id:'tx_trainingcaces.submit')}" />
+    </f:form>
+</f:section>
+
+
+<f:section name="R486">
+    <h1>
+        <f:translate key="tx_trainingcaces.caces_copyright" />&reg; R.486 - <f:translate key="tx_trainingcaces.mobile_platforms" />
+    </h1>
+    <f:form class="user-form"
+            action="updateExamsArray"
+            controller="FrontendUser"
+            name="candidate"
+            object="{candidate}"
+            arguments="{exams: exams}">
+
+        <f:for each="{exams}" as="exam" iteration="key">
+            <f:if condition="{exam.type.uid} == {settings.type.R486}">
+                <input type="hidden" name="exam[{key.index}][uid]" value="{exam.uid}" />
+            </f:if>
+        </f:for>
+
+        <table class="table-std">
+            <f:render partial="User/ExamTableHead" arguments="{_all}" />
+            <tbody>
+            <f:for each="{exams}" as="exam" iteration="key">
+                <f:if condition="{exam.type.uid} == {settings.type.R486}">
+                    <f:render partial="User/ExamProperties" arguments="{_all}" />
+                </f:if>
+            </f:for>
+            </tbody>
+        </table>
+        <f:form.submit value="{f:translate(id:'tx_trainingcaces.submit')}" />
+    </f:form>
+</f:section>
+
+<f:section name="R489">
+    <h1>
+        <f:translate key="tx_trainingcaces.caces_copyright" />&reg; R.489 - <f:translate key="tx_trainingcaces.rider_trolleys" />
+    </h1>
+    <f:form class="user-form"
+            action="updateExamsArray"
+            controller="FrontendUser"
+            name="candidate"
+            object="{candidate}"
+            arguments="{exams: exams}">
+
+        <f:for each="{exams}" as="exam" iteration="key">
+            <f:if condition="{exam.type.uid} == {settings.type.R489}">
+                <input type="hidden" name="exam[{key.index}][uid]" value="{exam.uid}" />
+            </f:if>
+        </f:for>
+
+        <table class="table-std">
+            <f:render partial="User/ExamTableHead" arguments="{_all}" />
+            <tbody>
+            <f:for each="{exams}" as="exam" iteration="key">
+                <f:if condition="{exam.type.uid} == {settings.type.R489}">
+                    <f:render partial="User/ExamProperties" arguments="{_all}" />
+                </f:if>
+            </f:for>
+            </tbody>
+        </table>
+        <f:form.submit value="{f:translate(id:'tx_trainingcaces.submit')}" />
+    </f:form>
+</f:section>
+
+<f:section name="R490">
+    <h1>
+        <f:translate key="tx_trainingcaces.caces_copyright" />&reg; R.490 - <f:translate key="tx_trainingcaces.loader_crane" />
+    </h1>
+    <f:form class="user-form"
+            action="updateExamsArray"
+            controller="FrontendUser"
+            name="candidate"
+            object="{candidate}"
+            arguments="{exams: exams}">
+
+        <f:for each="{exams}" as="exam" iteration="key">
+            <f:if condition="{exam.type.uid} == {settings.type.R490}">
+                <input type="hidden" name="exam[{key.index}][uid]" value="{exam.uid}" />
+            </f:if>
+        </f:for>
+
+        <table class="table-std">
+            <f:render partial="User/ExamTableHead" arguments="{_all}" />
+            <tbody>
+            <f:for each="{exams}" as="exam" iteration="key">
+                <f:if condition="{exam.type.uid} == {settings.type.R490}">
+                    <f:if condition="{exam.isOption} == '1' ">
+                        <f:then>
+                            <!-- Don't show teleccommande -->
+                        </f:then>
+                        <f:else>
+                            <f:render partial="User/ExamProperties" arguments="{_all}" />
+                        </f:else>
+                    </f:if>
+                </f:if>
+            </f:for>
+            </tbody>
+        </table>
+        <f:form.submit value="{f:translate(id:'tx_trainingcaces.submit')}" />
+    </f:form>
+</f:section>

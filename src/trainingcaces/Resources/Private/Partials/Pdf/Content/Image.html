@@ -1,0 +1,15 @@
+<pdf:html>
+    <f:if condition="{candidate.photo}">
+        <f:then>
+            <pdf:image src="{userPhotoFile}" processingInstructions="{height: '250c'}" height="250" fitOnPage="1" />
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </f:then>
+        <f:else>
+            <div style="border: 1px solid #000; text-align: center;">
+                <br /><br /><br /><br /><br /><br />
+                No Image
+                <br /><br /><br /><br /><br /><br />
+            </div>
+        </f:else>
+    </f:if>
+</pdf:html>

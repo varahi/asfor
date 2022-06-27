@@ -1,0 +1,30 @@
+{
+    "name": "t3dev/trainingcaces",
+    "type": "typo3-cms-extension",
+    "description": "Training Caces",
+    "authors": [
+        {
+            "name": "Dmitry Vasilev",
+            "role": "Developer",
+            "email": "dmitry@t3dev.ru"
+        }
+    ],
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "T3Dev\\Trainingcaces\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "T3Dev\\Trainingcaces\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "t3dev/trainingcaces": "self.version",
+        "typo3-ter/trainingcaces": "self.version"
+    }
+}

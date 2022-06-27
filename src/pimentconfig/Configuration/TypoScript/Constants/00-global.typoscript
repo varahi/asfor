@@ -1,0 +1,62 @@
+#
+# Defining some general constants
+#
+
+# basic config options
+config {
+    # cat=config : advanced/100/100; type=string; label=Admin Panel
+    adminPanel = 0
+    # cat=config : advanced/100/110; type=string; label=Debug
+    debug = 0
+
+    language = fr
+    locale = fr_FR.UTF-8
+    sys_language_uid = 0
+    locale_all = fr_FR
+
+    header {
+        logoTitle = Pimet Config
+        slogan =
+        phone =
+        email =
+    }
+    contact {
+
+    }
+    footer {
+        form {
+            title =
+            source =
+        }
+        // Copyright and footer address source
+        copyright = &copy; 2020
+        developer = Piment Rouge
+    }
+    navigation {
+        rootPid = 1
+    }
+    page {
+        siteTitle =
+        copyright =
+        address =
+    }
+
+    meta {
+        description =
+        og_description =
+        twitter_description =
+        keywords =
+    }
+}
+
+page {
+    meta {
+        robots =
+        google =
+        viewport = width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0
+        author =
+        keywords =
+        compatible =
+        apple-mobile-web-app-capable = yes
+    }
+}

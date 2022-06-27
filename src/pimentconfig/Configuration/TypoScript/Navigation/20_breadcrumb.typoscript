@@ -1,0 +1,88 @@
+################
+# Breadcrump
+################
+
+lib.breadcrumb = COA
+lib.breadcrumb {
+    stdWrap.wrap = <nav aria-label="breadcrumb"><ol class="breadcrumb">|</ol></nav>
+    10 = HMENU
+    10.includeNotInMenu = 0
+    10 {
+        special = rootline
+        //special.range = {$config.navigation.specialRange}
+        special.range = 0 | -1
+        1 = TMENU
+        1 {
+            noBlur = 1
+            NO = 1
+            NO {
+                wrapItemAndSub =
+                ATagTitle.field = subtitle // title
+                stdWrap.htmlSpecialChars = 1
+                stdWrap.field = subtitle // title
+
+                linkWrap = <li class="breadcrumb-item">|</li>
+                #ATagBeforeWrap = 1
+            }
+
+            CUR <.NO
+            CUR {
+                #wrapItemAndSub = <span class="breadcrumbs__current">|</span>
+                doNotLinkIt = 1
+                linkWrap = <li class="breadcrumb-item active" aria-current="page">|</li>
+            }
+        }
+    }
+}
+
+//[request.getQueryParams()['tx_news_pi1']['news'] > 0] || [request.getParsedBody()['tx_news_pi1']['news'] > 0]
+//[request.getQueryParams()['tx_news_pi1']['news'] > 0]
+/*
+    lib.breadcrumb >
+    lib.breadcrumb = COA
+    lib.breadcrumb {
+        stdWrap.wrap = <nav aria-label="breadcrumb"><ol class="breadcrumb">|</ol></nav>
+        10 = HMENU
+        10.includeNotInMenu = 0
+        10 {
+            special = rootline
+            special.range =  0 | -1
+            1 = TMENU
+            1 {
+                noBlur = 1
+                NO = 1
+                NO {
+                    wrapItemAndSub =
+                    ATagTitle.field = subtitle // title
+                    stdWrap.htmlSpecialChars = 1
+                    stdWrap.field = subtitle // title
+                    linkWrap = <li class="breadcrumb-item">|</li>
+                }
+
+                CUR <.NO
+                CUR {
+                    doNotLinkIt = 1
+                    linkWrap = <li class="breadcrumb-item active" aria-current="page">|</li>
+                }
+            }
+        }
+
+        # Add news title if on single view
+        20 = RECORDS
+        20 {
+            if.isTrue.data = GP:tx_news_pi1|news
+            dontCheckPid = 1
+            tables = tx_news_domain_model_news
+            source.data = GP:tx_news_pi1|news
+            source.intval = 1
+            conf.tx_news_domain_model_news = TEXT
+            conf.tx_news_domain_model_news {
+                field = subtitle // title
+                htmlSpecialChars = 1
+            }
+            stdWrap.wrap = <li class="breadcrumb-item active" aria-current="page">|</li>
+            stdWrap.required = 1
+        }
+    }
+[global]
+*/

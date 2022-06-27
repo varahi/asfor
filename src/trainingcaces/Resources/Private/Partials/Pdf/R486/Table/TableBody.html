@@ -1,0 +1,87 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:section name="A">
+    <tr style="background-color: #e8e8e8;">
+        <td width="35"><span style="font-weight: bold; font-size: 7pt">A</span></td>
+        <td width="100" style="font-weight: bold; font-size: 7pt">PEMP à Élévation multidirectionnelle</td>
+        <td style="font-weight: normal; font-size: 6pt;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</f:section>
+
+<f:section name="B">
+    <tr>
+        <v:condition.string.contains needle="R486_B" haystack="{exam.category.uniqueName -> f:for(each: '{candidate.exam}', as: 'exam')}">
+            <f:then>
+                <f:for each="{candidate.exam}" as="exam">
+                    <f:if condition="{exam.category.name} == 'Cat. B' ">
+                        <td width="35"><span style="font-weight: bold; font-size: 7pt">B</span></td>
+                        <td width="100" style="font-weight: bold; font-size: 7pt">PEMP à Élévation multidirectionnelle</td>
+                        <f:render partial="Pdf/Table/TdPartOne" arguments="{_all}" />
+                        <f:render partial="Pdf/Table/TdPartTwo" arguments="{_all}" />
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <td width="35"><span style="font-weight: bold; font-size: 7pt">B</span></td>
+                <td width="100" style="font-weight: bold; font-size: 7pt">PEMP à Élévation multidirectionnelle</td>
+                <td width="100"></td>
+                <td width="80"></td>
+                <td width="45"></td>
+                <td width="45"></td>
+            </f:else>
+        </v:condition.string.contains>
+    </tr>
+</f:section>
+
+<f:section name="C">
+    <tr>
+        <v:condition.string.contains needle="R486_C" haystack="{exam.category.uniqueName -> f:for(each: '{candidate.exam}', as: 'exam')}">
+            <f:then>
+                <f:for each="{candidate.exam}" as="exam">
+                    <f:if condition="{exam.category.name} == 'Cat. C' ">
+                        <td width="35"><span style="font-weight: bold; font-size: 7pt">C</span></td>
+                        <td width="100" style="font-weight: bold; font-size: 7pt">Hors production</td>
+                        <f:render partial="Pdf/Table/TdPartOne" arguments="{_all}" />
+                        <f:render partial="Pdf/Table/TdPartTwo" arguments="{_all}" />
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <td width="35"><span style="font-weight: bold; font-size: 7pt">C</span></td>
+                <td width="100" style="font-weight: bold; font-size: 7pt">Hors production</td>
+                <td width="100"></td>
+                <td width="80"></td>
+                <td width="45"></td>
+                <td width="45"></td>
+            </f:else>
+        </v:condition.string.contains>
+    </tr>
+</f:section>
+
+<f:section name="Option">
+    <tr>
+        <v:condition.string.contains needle="R486_Option" haystack="{exam.category.uniqueName -> f:for(each: '{candidate.exam}', as: 'exam')}">
+            <f:then>
+                <f:for each="{candidate.exam}" as="exam">
+                    <f:if condition="{exam.category.name} == 'Cat. Option' ">
+                        <td width="35"><span style="font-weight: bold; font-size: 7pt">Cat. Option</span></td>
+                        <td width="100" style="font-weight: bold; font-size: 7pt">Hors production</td>
+                        <f:render partial="Pdf/Table/TdPartOne" arguments="{_all}" />
+                        <f:render partial="Pdf/Table/TdPartTwo" arguments="{_all}" />
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <td width="35"><span style="font-weight: bold; font-size: 7pt">Cat. Option</span></td>
+                <td width="100" style="font-weight: bold; font-size: 7pt">Hors production</td>
+                <td width="100"></td>
+                <td width="80"></td>
+                <td width="45"></td>
+                <td width="45"></td>
+            </f:else>
+        </v:condition.string.contains>
+    </tr>
+</f:section>

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:trainingcaces/Resources/Private/Language/locallang_db" date="2020-06-25T12:12:00Z" product-name="trainingcaces">
+		<header/>
+		<body>
+
+			<trans-unit id="fe_users.div.additional">
+				<source>Additional</source>
+			</trans-unit>
+			<trans-unit id="fe_users.username">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="fe_users.password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="fe_users.oldPassword">
+				<source>Old password</source>
+			</trans-unit>
+			<trans-unit id="fe_users.passwordRepeat">
+				<source>Password repeat</source>
+			</trans-unit>
+			<trans-unit id="fe_users.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="fe_users.firstName">
+				<source>First name</source>
+			</trans-unit>
+			<trans-unit id="fe_users.lastName">
+				<source>Last name</source>
+			</trans-unit>
+			<trans-unit id="fe_users.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="fe_users.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="fe_users.telephone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="fe_users.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="fe_users.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="fe_users.emailRepeat">
+				<source>Email repeat</source>
+			</trans-unit>
+			<trans-unit id="fe_users.company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="fe_users.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="fe_users.zip">
+				<source>Zipcode</source>
+			</trans-unit>
+			<trans-unit id="fe_users.staticInfoCountry">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="fe_users.dateOfBirth">
+				<source>Date of birth</source>
+			</trans-unit>
+
+			<trans-unit id="fe_users.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="fe_users.captcha">
+				<source>Captcha</source>
+			</trans-unit>
+			<trans-unit id="fe_users.clear">
+				<source>Clear line</source>
+			</trans-unit>
+			<trans-unit id="fe_users.submit">
+				<source>Submit button</source>
+			</trans-unit>
+			<trans-unit id="fe_users.submit_captcha">
+				<source>Submit button with invisible captcha (needs EXT:recaptcha)</source>
+			</trans-unit>
+			<trans-unit id="fe_users.change">
+				<source>Change button</source>
+			</trans-unit>
+			<trans-unit id="fe_users.update">
+				<source>Update button</source>
+			</trans-unit>
+			<trans-unit id="fe_users.delete">
+				<source>Delete button</source>
+			</trans-unit>
+			<trans-unit id="fe_users.resend">
+				<source>Resend button</source>
+			</trans-unit>
+			<trans-unit id="fe_users.disabledEmail">
+				<source>Email (disabled if logged in)</source>
+			</trans-unit>
+
+			<trans-unit id="fe_users.div.registration">
+				<source>Registration</source>
+			</trans-unit>
+			<trans-unit id="fe_users.activated_on">
+				<source>Activated on</source>
+			</trans-unit>
+			<trans-unit id="fe_users.pseudonym">
+				<source>Pseudonym</source>
+			</trans-unit>
+			<trans-unit id="fe_users.open_password">
+				<source>Open password (Needs for API, only for trainers)</source>
+			</trans-unit>
+			<trans-unit id="fe_users.gender">
+				<source>Mr/Ms</source>
+			</trans-unit>
+			<trans-unit id="fe_users.gender.I.1">
+				<source>Mr</source>
+			</trans-unit>
+			<trans-unit id="fe_users.gender.I.2">
+				<source>Ms</source>
+			</trans-unit>
+			<trans-unit id="fe_users.date_of_birth">
+				<source>Date of birth</source>
+			</trans-unit>
+			<trans-unit id="fe_users.language">
+				<source>Language</source>
+			</trans-unit>
+			<trans-unit id="fe_users.zone">
+				<source>State/province</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone">
+				<source>Timezone</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-12">
+				<source>UTC−12:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-11">
+				<source>UTC−11:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-10">
+				<source>UTC−10:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-9.5">
+				<source>UTC−09:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-9">
+				<source>UTC−09:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-8">
+				<source>UTC−08:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-7">
+				<source>UTC−07:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-6">
+				<source>UTC−06:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-5">
+				<source>UTC−05:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-4.5">
+				<source>UTC−04:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-4">
+				<source>UTC−04:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-3.5">
+				<source>UTC−03:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-3">
+				<source>UTC−03:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-2">
+				<source>UTC−02:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.-1">
+				<source>UTC−01:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.0">
+				<source>UTC</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.1">
+				<source>UTC+01:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.2">
+				<source>UTC+02:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.3">
+				<source>UTC+03:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.3.5">
+				<source>UTC+03:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.4">
+				<source>UTC+04:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.4.5">
+				<source>UTC+04:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.5">
+				<source>UTC+05:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.5.5">
+				<source>UTC+05:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.5.75">
+				<source>UTC+05:45</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.6">
+				<source>UTC+06:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.6.5">
+				<source>UTC+06:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.7">
+				<source>UTC+07:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.8">
+				<source>UTC+08:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.9">
+				<source>UTC+09:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.9.5">
+				<source>UTC+09:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.10">
+				<source>UTC+10:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.11">
+				<source>UTC+11:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.11.5">
+				<source>UTC+11:30</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.12">
+				<source>UTC+12:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.12.75">
+				<source>UTC+12:45</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.13">
+				<source>UTC+13:00</source>
+			</trans-unit>
+			<trans-unit id="fe_users.timezone.I.14">
+				<source>UTC+14:00</source>
+			</trans-unit>
+
+			<trans-unit id="fe_users.daylight">
+				<source>Daylight saving time</source>
+			</trans-unit>
+			<trans-unit id="fe_users.static_info_country">
+				<source>Country Code</source>
+			</trans-unit>
+			<trans-unit id="fe_users.mobilephone">
+				<source>Mobile phone</source>
+			</trans-unit>
+			<trans-unit id="fe_users.gtc">
+				<source>General terms and conditions accepted</source>
+			</trans-unit>
+			<trans-unit id="fe_users.gtc_selectField">
+				<source>Terms and conditions</source>
+			</trans-unit>
+			<trans-unit id="fe_users.privacy">
+				<source>Privacy agreement</source>
+			</trans-unit>
+			<trans-unit id="fe_users.status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="fe_users.status.I.1">
+				<source>Student</source>
+			</trans-unit>
+			<trans-unit id="fe_users.status.I.2">
+				<source>Job seeking full time</source>
+			</trans-unit>
+			<trans-unit id="fe_users.status.I.3">
+				<source>Working</source>
+			</trans-unit>
+			<trans-unit id="fe_users.status.I.4">
+				<source>Retired</source>
+			</trans-unit>
+			<trans-unit id="fe_users.status.I.5">
+				<source>Job seeking half time</source>
+			</trans-unit>
+			<trans-unit id="fe_users.by_invitation">
+				<source>Was invited</source>
+			</trans-unit>
+			<trans-unit id="fe_users.comments">
+				<source>Comments</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam" resname="tx_trainingcaces_domain_model_exam">
+				<source>Exam</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_status.0">
+				<source>Not completed</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_status.1">
+				<source>Theory is confirmed by a student</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_status.2">
+				<source>Theory checked by the tester, passed</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_status.3">
+				<source>Theory failed</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_status.0">
+				<source>Not completed</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_status.1">
+				<source>Practice confirmed by student</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_status.2">
+				<source>Practice checked by a tester, passed</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_status.3">
+				<source>Practice failed</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_status" resname="tx_trainingcaces_domain_model_exam.theory_status">
+				<source>Theory Status</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_status" resname="tx_trainingcaces_domain_model_exam.practice_status">
+				<source>Practice Status</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.number" resname="tx_trainingcaces_domain_model_exam.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.session_date" resname="tx_trainingcaces_domain_model_exam.session_date">
+				<source>Session Date</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.validate_date" resname="tx_trainingcaces_domain_model_exam.validate_date">
+				<source>Validate Date</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_test_date" resname="tx_trainingcaces_domain_model_exam.theory_test_date">
+				<source>Theory Test Date</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.tx_trainingcaces_case" resname="tx_trainingcaces_domain_model_exam.tx_trainingcaces_case">
+				<source>Case</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_result" resname="tx_trainingcaces_domain_model_exam.theory_result">
+				<source>Theory Result</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_result_file" resname="tx_trainingcaces_domain_model_exam.theory_result_file">
+				<source>Theory Result File</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_test_date" resname="tx_trainingcaces_domain_model_exam.practice_test_date">
+				<source>Practice Test Date</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_result" resname="tx_trainingcaces_domain_model_exam.practice_result">
+				<source>Practice Result</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_result_file" resname="tx_trainingcaces_domain_model_exam.practice_result_file">
+				<source>Practice Result File</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.selection" resname="tx_trainingcaces_domain_model_exam.selection">
+				<source>Selection</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.answers" resname="tx_trainingcaces_domain_model_exam.answers">
+				<source>Answers</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_answers" resname="tx_trainingcaces_domain_model_exam.theory_answers">
+				<source>Theory Answers</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_answers" resname="tx_trainingcaces_domain_model_exam.practice_answers">
+				<source>Practice Answers</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.enterprice_client" resname="tx_trainingcaces_domain_model_exam.enterprice_client">
+				<source>Enterprice Client</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.place" resname="tx_trainingcaces_domain_model_exam.place">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.candidate" resname="tx_trainingcaces_domain_model_exam.candidate">
+				<source>Candidate</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_trainer" resname="tx_trainingcaces_domain_model_exam.theory_trainer">
+				<source>Theory Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_trainer" resname="tx_trainingcaces_domain_model_exam.practice_trainer">
+				<source>Practice Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.type" resname="tx_trainingcaces_domain_model_exam.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.category" resname="tx_trainingcaces_domain_model_exam.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.theory_is_sent" resname="tx_trainingcaces_domain_model_exam.theory_is_sent">
+				<source>Theory is send</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.practice_is_sent" resname="tx_trainingcaces_domain_model_exam.practice_is_sent">
+				<source>Practice is send</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.note" resname="tx_trainingcaces_domain_model_exam.note">
+				<source>Note</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.company" resname="tx_trainingcaces_domain_model_exam.company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.sub_cat" resname="tx_trainingcaces_domain_model_exam.sub_cat">
+				<source>Sub category</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.next_exam" resname="tx_trainingcaces_domain_model_exam.next_exam">
+				<source>Next exam</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_enterpriseclient" resname="tx_trainingcaces_domain_model_enterpriseclient">
+				<source>Enterprise Client</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_enterpriseclient.name" resname="tx_trainingcaces_domain_model_enterpriseclient.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_place" resname="tx_trainingcaces_domain_model_place">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_place.name" resname="tx_trainingcaces_domain_model_place.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_user" resname="tx_trainingcaces_domain_model_user">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_user.exam" resname="tx_trainingcaces_domain_model_user.exam">
+				<source>Exam</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_user.photo" resname="tx_trainingcaces_domain_model_user.photo">
+				<source>User photo</source>
+			</trans-unit>
+			<trans-unit id="fe_users.tx_extbase_type.Tx_Trainingcaces_User" resname="fe_users.tx_extbase_type.Tx_Trainingcaces_User">
+				<source>Training Caces User</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_type" resname="tx_trainingcaces_domain_model_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_type.name" resname="tx_trainingcaces_domain_model_type.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_category" resname="tx_trainingcaces_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_category.name" resname="tx_trainingcaces_domain_model_category.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_category.short_name">
+				<source>Short Name. Use for automatic creating number of exam</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_category.unique_name">
+				<source>Unique name. Used for haystack needle in generating PDF. (Required)</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_category.subcategory">
+				<source>Subcategory</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_category.section" resname="tx_trainingcaces_domain_model_category.section">
+				<source>If category has only numeric name, then need to set section name with number (For example: section3)</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_theorytrainer" resname="tx_trainingcaces_domain_model_theorytrainer">
+				<source>Theory Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_theorytrainer.name" resname="tx_trainingcaces_domain_model_theorytrainer.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_practicetrainer" resname="tx_trainingcaces_domain_model_practicetrainer">
+				<source>Practice Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_practicetrainer.name" resname="tx_trainingcaces_domain_model_practicetrainer.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_candidate" resname="tx_trainingcaces_domain_model_candidate">
+				<source>Candidate</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_candidate.name" resname="tx_trainingcaces_domain_model_candidate.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_candidate.name" resname="tx_trainingcaces_domain_model_candidate.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_candidate.name" resname="tx_trainingcaces_domain_model_candidate.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_candidate.date_of_birth" resname="tx_trainingcaces_domain_model_candidate.date_of_birth">
+				<source>Date of birth</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_trainingcaces.name" resname="tx_trainingcaces_trainingcaces.name">
+				<source>Training Caces</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_trainingcaces.description" resname="tx_trainingcaces_trainingcaces.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_trainingcaces.name" resname="tx_trainingcaces_trainingcacesjson.name">
+				<source>Training Caces REST Api</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_trainingcaces.description" resname="tx_trainingcaces_trainingcacesjson.description">
+				<source>Output Training Caces REST Api</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.path_segment" resname="tx_trainingcaces_trainingcaces.description">
+				<source>Path Segment</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_case" resname="tx_trainingcaces_domain_model_case">
+				<source>Case</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_case.name" resname="tx_trainingcaces_domain_model_case.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_case.category" resname="tx_trainingcaces_domain_model_case.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer" resname="tx_trainingcaces_domain_model_trainer">
+				<source>Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer.name" resname="tx_trainingcaces_domain_model_trainer.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer.first_name" resname="tx_trainingcaces_domain_model_trainer.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer.last_name" resname="tx_trainingcaces_domain_model_trainer.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer.date_of_birth" resname="tx_trainingcaces_domain_model_trainer.date_of_birth">
+				<source>Date Of Birth</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer.type" resname="tx_trainingcaces_domain_model_trainer.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer.image" resname="tx_trainingcaces_domain_model_trainer.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer.type.0" resname="tx_trainingcaces_domain_model_trainer.type.0">
+				<source>Theory Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_trainer.type.1" resname="tx_trainingcaces_domain_model_trainer.type.1">
+				<source>Practice Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces.theory" resname="tx_trainingcaces.theory">
+				<source>Theory</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces.practice" resname="tx_trainingcaces.practice">
+				<source>Practice</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces.category" resname="tx_trainingcaces.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces.type" resname="tx_trainingcaces.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces.description" resname="tx_trainingcaces.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.is_choice" resname="tx_trainingcaces_domain_model_exam.is_choice">
+				<source>Is choice</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.is_practice">
+				<source>Is practice</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_exam.is_option">
+				<source>Is option</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_subcategory">
+				<source>Subcategory</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_subcategory.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_subcategory.short_name">
+				<source>Short name</source>
+			</trans-unit>
+			<trans-unit id="tx_trainingcaces_domain_model_subcategory.unique_name">
+				<source>Unique name</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

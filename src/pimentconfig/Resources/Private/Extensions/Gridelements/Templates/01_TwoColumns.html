@@ -1,0 +1,10 @@
+<f:if condition="{data.flexform_hide_row} == 1">
+    <f:then>
+        <f:render partial="01_TwoColumns" arguments="{_all}" />
+    </f:then>
+    <f:else>
+        <div class="row {data.flexform_row_class}">
+            <f:render partial="01_TwoColumns" arguments="{_all}" />
+        </div>
+    </f:else>
+</f:if>

@@ -1,0 +1,20 @@
+lib.sideMenu >
+lib.sideMenu = HMENU
+lib.sideMenu {
+    wrap = <nav id="fh5co-main-menu" role="navigation">|</nav>
+    //entryLevel = 1
+    1 = TMENU
+    1 {
+        wrap = <ul>|</ul>
+        #special = directory
+        #special.value = {$page.menu.profileMenu}
+        # normal menu items
+        NO {
+            allWrap = <li>|</li>
+            stdWrap.htmlSpecialChars = 1
+        }
+        ACT < .NO
+        ACT = 1
+        ACT.allWrap = <li class="fh5co-active">|</li>
+    }
+}

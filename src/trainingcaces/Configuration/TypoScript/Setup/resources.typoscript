@@ -1,0 +1,9 @@
+page.includeJSFooter {
+    #10_script = EXT:trainingcaces/Resources/Public/JavaScript/script.js
+}
+
+page.includeCSS {
+    10_custom = EXT:trainingcaces/Resources/Public/Css/custom.css
+    #20_media_queries = EXT:trainingcaces/Resources/Public/Css/media_queries.css
+}
+

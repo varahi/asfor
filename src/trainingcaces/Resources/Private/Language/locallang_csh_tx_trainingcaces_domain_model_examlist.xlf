@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:trainingcaces/Resources/Private/Language/locallang_csh" date="2020-06-25T12:12:00Z" product-name="trainingcaces">
+		<header/>
+		<body>
+			<trans-unit id="session_date.description" resname="session_date.description">
+				<source>sessionDate</source>
+			</trans-unit>
+			<trans-unit id="theory_test_date.description" resname="theory_test_date.description">
+				<source>theoryTestDate</source>
+			</trans-unit>
+			<trans-unit id="theory_result.description" resname="theory_result.description">
+				<source>theoryResult</source>
+			</trans-unit>
+			<trans-unit id="theory_result_file.description" resname="theory_result_file.description">
+				<source>theoryResultFile</source>
+			</trans-unit>
+			<trans-unit id="practice_test_date.description" resname="practice_test_date.description">
+				<source>practiceTestDate</source>
+			</trans-unit>
+			<trans-unit id="practice_result.description" resname="practice_result.description">
+				<source>practiceResult</source>
+			</trans-unit>
+			<trans-unit id="practice_result_file.description" resname="practice_result_file.description">
+				<source>practiceResultFile</source>
+			</trans-unit>
+			<trans-unit id="selection.description" resname="selection.description">
+				<source>selection</source>
+			</trans-unit>
+			<trans-unit id="enterprice_client.description" resname="enterprice_client.description">
+				<source>enterpriceClient</source>
+			</trans-unit>
+			<trans-unit id="place.description" resname="place.description">
+				<source>place</source>
+			</trans-unit>
+			<trans-unit id="candidate.description" resname="candidate.description">
+				<source>candidate</source>
+			</trans-unit>
+			<trans-unit id="theory_trainer.description" resname="theory_trainer.description">
+				<source>theoryTrainer</source>
+			</trans-unit>
+			<trans-unit id="practice_trainer.description" resname="practice_trainer.description">
+				<source>practiceTrainer</source>
+			</trans-unit>
+			<trans-unit id="type.description" resname="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="category.description" resname="category.description">
+				<source>category</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

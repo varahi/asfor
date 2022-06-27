@@ -1,0 +1,33 @@
+{
+  "name": "piment/pimentconfig",
+  "type": "typo3-cms-extension",
+  "description": "Configurations supplémentaires pour la plateforme TYPO3",
+  "authors": [
+    {
+      "name": "Dmitry Vasilev",
+      "role": "Developer"
+    },
+    {
+      "name": "Pascal Serres",
+      "email": "comptabilite@pimentrouge.fr"
+    }
+  ],
+  "version": "1.0.0",
+  "require": {
+    "typo3/cms-core": "^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Piment\\PimentConfig\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Piment\\PimentConfig\\Tests\\": "Tests"
+    }
+  },
+  "replace": {
+    "pimentconfig": "self.version",
+    "typo3-ter/pimentconfig": "self.version"
+  }
+}

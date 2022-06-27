@@ -1,0 +1,110 @@
+/* Color */
+/* Fonts */
+/* 
+TRANSITION
+*/
+/* 
+
+SHADOW
+
+*/
+/* Browser Prefixes */
+/* Background gradient */
+/* Rotate */
+/* Scale */
+/* Translate */
+/* Skew */
+/* Transform Origin */
+/* Flex box */
+/*
+
+BOX-SIZING
+
+*/
+/* 
+
+Top center
+
+*/
+/*
+
+Horizontal center
+
+*/
+/** SLIDESHOW **/
+.owl-carousel {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.owl-carousel .owl-stage-outer {
+  position: relative;
+}
+.owl-carousel .item .image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+.owl-carousel .item .caption p {
+  font-size: 14px;
+  padding: 7px 0;
+}
+.owl-carousel .owl-nav {
+  height: auto;
+  z-index: 15;
+}
+.owl-carousel .owl-nav .owl-prev, .owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 55px;
+  height: 100%;
+  text-indent: -9999px;
+  -webkit-transition: all 0.3s 0s ease-in-out;
+  -moz-transition: all 0.3s 0s ease-in-out;
+  transition: all 0.3s 0s ease-in-out;
+  padding: 0;
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+}
+.owl-carousel .owl-nav .owl-next {
+  background: url("../images/arrow_slider_right.svg") no-repeat center center;
+  background-size: 100%;
+  right: 0;
+}
+.owl-carousel .owl-nav .owl-prev {
+  background: url("../images/arrow_slider_left.svg") no-repeat center center;
+  background-size: 100%;
+  left: 0;
+}
+.owl-carousel .owl-dots {
+  height: auto;
+  bottom: 40px;
+  width: 100%;
+  z-index: 15;
+  position: absolute;
+  text-align: center;
+  -webkit-transition: all 0.3s 0s ease-in-out;
+  -moz-transition: all 0.3s 0s ease-in-out;
+  transition: all 0.3s 0s ease-in-out;
+}
+.owl-carousel .owl-dots .owl-dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  margin: 0 3px;
+  border-radius: 15px;
+  -webkit-transition: all 0.3s 0s ease-in-out;
+  -moz-transition: all 0.3s 0s ease-in-out;
+  transition: all 0.3s 0s ease-in-out;
+  padding: 0;
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+}
+.owl-carousel .owl-dots .owl-dot.active, .owl-carousel .owl-dots .owl-dot:hover {
+  background-color: #5868CC;
+}
+/** FIN SLIDESHOW HOME **/

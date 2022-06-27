@@ -1,0 +1,71 @@
+/*
+* Definition of custom subcategories
+*/
+# customsubcategory=domain=Domain(s) of website
+# customsubcategory=layout=Layout settings
+# customsubcategory=language=Language settings
+# customsubcategory=extension=Extension settings
+# customsubcategory=video=Video settings
+
+/* ----------------------------------------
+* Site & theme default typo3 constants
+*/
+
+# Including EXT:fluid_styled_content's default constants
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+
+styles.content {
+    imgtext {
+        maxW = 1140
+        # 50% col, margin between 30px
+        maxWInText = 11140
+        maxWInText = 750
+        textMargin = 20
+        colSpace = 30
+        rowSpace = 30
+
+        linkWrap {
+            width = 1200
+            newWindow = 1
+            lightboxEnabled = 1
+            lightboxCssClass = fancybox
+            lightboxRelAttribute = fancybox[{field:uid}]
+        }
+        borderThick = 1
+        borderSpace = 10
+    }
+
+    uploads {
+        filesizeBytesLabels = " | Kb| Mb| Gb"
+    }
+
+    media {
+        defaultVideoWidth = 370
+        defaultVideoHeight = 208
+
+        defaultAudioWidth = 370
+        defaultAudioHeight = 30
+    }
+
+    textmedia {
+        linkWrap.lightboxEnabled = 1
+        linkWrap.lightboxCssClass = fancybox
+        linkWrap.lightboxRelAttribute = fancybox[{field:uid}]
+    }
+}
+
+# Overriding EXT:fluid_styled_content's constants for template paths
+styles {
+    content {
+        textmedia.maxW = 1200
+        textmedia.maxWInText = 1200
+        textmedia.linkWrap.lightboxEnabled = 1
+        defaultHeaderType = 1
+    }
+
+    templates {
+        templateRootPath = EXT:pimentconfig/Resources/Private/Content/Templates/
+        partialRootPath = EXT:pimentconfig/Resources/Private/Content/Partials/
+        layoutRootPath = EXT:pimentconfig/Resources/Private/Content/Layouts/
+    }
+}

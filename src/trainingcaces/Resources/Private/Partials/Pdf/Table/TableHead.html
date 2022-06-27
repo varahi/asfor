@@ -1,0 +1,15 @@
+{namespace pdf=Bithost\Pdfviewhelpers\ViewHelpers}
+
+<tr>
+    <th width="35">Cat.</th>
+    <th width="100">Type</th>
+    <th width="100">N de CACES <sup>&reg;</sup>
+        <f:if condition="{type} == 'R489' ">
+            <f:then></f:then>
+            <f:else><br />Option</f:else>
+        </f:if>
+    </th>
+    <th width="80">Nom - Prénom<div style="font-size: 6px; font-weight: normal;">du testeur des épreuves pratiques</div></th>
+    <th width="45">Obtention</th>
+    <th width="45">Échéance</th>
+</tr>

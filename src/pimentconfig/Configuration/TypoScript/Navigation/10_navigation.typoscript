@@ -1,0 +1,48 @@
+lib.navigation = COA
+lib.navigation.wrap = <div class="col-xs-12">|</div>
+lib.navigation {
+    10 = HMENU
+    10.wrap = <ul>|</ul>
+    10 {
+        entryLevel = 0
+        #excludeUidList =
+        1 = TMENU
+        1 {
+            wrap = |
+            expAll = 1
+            NO = 1
+            NO.allWrap >
+            NO.wrapItemAndSub = <li>|</li>
+            CUR = 1
+            CUR < .NO
+            CUR.wrapItemAndSub = <li class="active">|</li>
+            ACT = 1
+            ACT < .CUR
+
+            # Dropdown menu
+            IFSUB = 1
+            IFSUB < .NO
+        }
+
+        2 = TMENU
+        2 {
+            wrap = <div class="main-nav-dropdown"><div class="container"><div class="row">|</div></div></div>
+            expAll = 1
+            NO = 1
+            NO.allWrap >
+            NO.allWrap = <div class="col-xs-12 col-sm-3"><div class="list-title">|</div></div>
+
+            # Add closing div if is set 3th level menu
+            IFSUB < .NO
+            IFSUB.allWrap = <div class="col-xs-12 col-sm-3"><div class="list-title">|</div>
+        }
+
+        3 < .2
+        3 {
+            wrap >
+            NO.allWrap = |
+            wrap = <ul>|</ul></div>
+            NO.wrapItemAndSub = <li>|</li>
+        }
+    }
+}

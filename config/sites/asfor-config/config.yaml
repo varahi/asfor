@@ -1,0 +1,182 @@
+base: '/'
+baseVariants:
+  -
+    base: 'http://asfor.localhost/'
+    condition: 'getenv("HOST_ENV") == "localdev"'
+  -
+    base: 'http://caces.asfor.net/'
+    condition: 'getenv("HOST_ENV") == "serverdev"'
+errorHandling:
+#  -
+#    errorCode: '404'
+#    errorHandler: PHP
+#    errorPhpClassFQCN: T3Dev\Trainingcaces\ErrorHandlres\ErrorHandling
+  -
+    errorCode: '404'
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=6'
+languages:
+  -
+    title: France
+    enabled: true
+    base: /
+    typo3Language: fr
+    locale: fr_FR.UTF-8
+    iso-639-1: fr
+    navigationTitle: ''
+    hreflang: ''
+    direction: ''
+    flag: ru
+    languageId: '0'
+rootPageId: 1
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    default: ''
+    map:
+      .html: 133798
+      /download: 133799
+  NewsPlugin:
+    type: Extbase
+    extension: News
+    plugin: Pi1
+    routes:
+      -
+        routePath: '/detail/{news_title}'
+        _controller: 'News::detail'
+        _arguments:
+          news_title: news
+      -
+        routePath: '/list/{page}'
+        _controller: 'News::list'
+        _arguments:
+          page: '@widget_0/currentPage'
+    defaultController: 'News::list'
+    defaults:
+      page: '0'
+    requirements:
+      page: \d+
+    aspects:
+      news_title:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+  TrainingcacesPlugin:
+    type: Extbase
+    extension: Trainingcaces
+    plugin: Trainingcaces
+    routes:
+      -
+        routePath: '/edit/exam/{exam}'
+        _controller: 'Exam::editAjax'
+        _arguments:
+          exam: exam
+      -
+        routePath: '/show/exam/{exam_uid}'
+        _controller: 'Exam::show'
+        _arguments:
+          exam_uid: exam
+      -
+        routePath: '/show/user/{user_uid}'
+        _controller: 'FrontendUser::show'
+        _arguments:
+          user_uid: user
+      -
+        routePath: '/show/edit/{user_uid}'
+        _controller: 'FrontendUser::edit'
+        _arguments:
+          user_uid: user
+      -
+        routePath: '/download-pdf/user/{user_uid}'
+        _controller: 'FrontendUser::downloadPdf'
+        _arguments:
+          user_uid: candidate
+#          templateName: templateName
+      -
+        routePath: '/delete/exam/{exam_uid}'
+        _controller: 'Exam::delete'
+        _arguments:
+          exam_uid: exam
+      -
+        routePath: '/list/exam/{page}'
+        _controller: 'Exam::list'
+        _arguments:
+          page: '@widget_0/currentPage'
+      -
+        routePath: '/exams/export'
+        _controller: 'Exam::export'
+    defaultController: 'Exam::list'
+    defaults:
+      page: '0'
+    requirements:
+      page: \d+
+    aspects:
+      exam:
+        type: PersistedPatternMapper
+        tableName: tx_trainingcaces_domain_model_exam
+        routeFieldPattern: '^(?P<uid>\d+)$'
+        routeFieldResult: '{uid}'
+      user:
+        type: PersistedPatternMapper
+        tableName: fe_users
+        routeFieldPattern: '^(?P<uid>\d+)$'
+        routeFieldResult: '{uid}'
+      candidate:
+        type: PersistedPatternMapper
+        tableName: fe_users
+        routeFieldPattern: '^(?P<uid>\d+)$'
+        routeFieldResult: '{uid}'
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+
+  TrainingcacesApiPlugin:
+    type: Extbase
+    extension: Trainingcaces
+    plugin: TrainingcacesApi
+    routes:
+      -
+        routePath: 'student/{exam}'
+        _controller: 'Json::show'
+        _arguments:
+          exam: examList
+      -
+        routePath: 'api/index'
+        _controller: 'Json::index'
+      -
+        routePath: 'api/auth'
+        _controller: 'Json::auth'
+      -
+        routePath: 'api/testers'
+        _controller: 'Json::testers'
+      -
+        routePath: 'api/students'
+        _controller: 'Json::students'
+      -
+        routePath: 'api/update'
+        _controller: 'Json::updateUser'
+    defaults:
+      page: '0'
+    requirements:
+      page: \d+
+    aspects:
+      exam:
+        type: PersistedPatternMapper
+        tableName: tx_trainingcaces_domain_model_exam
+        routeFieldPattern: '^(?P<uid>\d+)$'
+        routeFieldResult: '{uid}'
+routes:
+  -
+    route: sitemap.xml
+    type: uri
+    source: 't3://page?uid=1&type=1533906435'
+#  -
+#    route: api/v1/students
+#    type: uri
+#    source: 't3://page?uid=1&type=133799'
+websiteTitle: ''

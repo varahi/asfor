@@ -1,0 +1,26 @@
+{
+    "name":"configloader/configloader",
+    "description":"Class to load .env settings",
+    "type":"library",
+    "license":"MIT",
+    "version": "10.4.0",
+    "authors":[
+        {
+            "name":"Juri Burov",
+            "email":"typo3@burov.de"
+        }
+    ],
+    "minimum-stability": "RC",
+
+    "require": {
+        "typo3/cms-core": "^10.4",
+        "helhum/config-loader": "^0"
+    },
+    "autoload":{
+        "psr-4":{
+            "Configloader\\": "Classes"
+        }
+    }
+
+
+}

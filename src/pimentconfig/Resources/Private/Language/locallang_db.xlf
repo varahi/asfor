@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2020-04-11T09:00:13Z">
+        <header>
+            <generator>LFEditor</generator>
+        </header>
+        <body>
+            <trans-unit id="page.main_page">
+                <source><![CDATA[Main Page]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.two_columns_title">
+                <source><![CDATA[Grid element - 2 columns]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.two_columns_description">
+                <source><![CDATA[Two Columns with configurations]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.three_columns_title">
+                <source><![CDATA[Grid element - 3 columns]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.three_columns_description">
+                <source><![CDATA[Three Columns with configurations]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.left_column">
+                <source><![CDATA[Left column]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.right_column">
+                <source><![CDATA[Right column]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.center_column">
+                <source><![CDATA[Right column]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.four_columns_title">
+                <source><![CDATA[Grid element - 4 columns]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.four_columns_description">
+                <source><![CDATA[Grid element - 4 columns]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.column_1">
+                <source><![CDATA[Column 1]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.column_2">
+                <source><![CDATA[Column 2]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.column_3">
+                <source><![CDATA[Column 3]]></source>
+            </trans-unit>
+            <trans-unit id="gridelement.column_4">
+                <source><![CDATA[Column 4]]></source>
+            </trans-unit>
+            <trans-unit id="page.section_class">
+                <source><![CDATA[Class for page section]]></source>
+            </trans-unit>
+            <trans-unit id="page.container_class">
+                <source><![CDATA[Class for page container]]></source>
+            </trans-unit>
+            <trans-unit id="page.select.section_class_none">
+                <source><![CDATA[No class]]></source>
+            </trans-unit>
+            <trans-unit id="page.select.container_class_none">
+                <source><![CDATA[No class]]></source>
+            </trans-unit>
+            <trans-unit id="page.select.section_class_example">
+                <source><![CDATA[Example class]]></source>
+            </trans-unit>
+            <trans-unit id="page.select.container_class_example">
+                <source><![CDATA[Example class]]></source>
+            </trans-unit>
+            <trans-unit id="page.hide_breadcrumb">
+                <source><![CDATA[Hide breadcrumb]]></source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_custom">
+                <source><![CDATA[Custom header]]></source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

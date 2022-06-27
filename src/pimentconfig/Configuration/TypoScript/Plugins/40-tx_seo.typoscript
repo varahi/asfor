@@ -1,0 +1,41 @@
+plugin.tx_seo {
+    config {
+        xmlSitemap {
+            sitemaps {
+                news {
+                    provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                    config {
+                        table = tx_news_domain_model_news
+                        sortField = sorting
+                        lastModifiedField = tstamp
+                        // Workaround: Newsbeiträge auf aktuelle Frontend-Sprache begrenzen:
+                        additionalWhere = sys_language_uid = 0
+                        recursive = 1
+
+                        // Set storage pid for news
+                        pid = 29
+                        url {
+                            // Set detail page pid
+                            pageId = 30
+                            fieldToParameterMap {
+                                uid = tx_news_pi1[news]
+                            }
+
+                            additionalGetParameters {
+                                tx_news_pi1.controller = News
+                                tx_news_pi1.action = detail
+                            }
+
+                            useCacheHash = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Anpassen für erste Fremdsprache:
+//[siteLanguage("title") == "English"]
+//    plugin.tx_seo.config.xmlSitemap.sitemaps.news.config.additionalWhere = sys_language_uid = 1
+//[end]

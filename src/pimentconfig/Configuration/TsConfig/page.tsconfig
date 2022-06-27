@@ -1,0 +1,8 @@
+###
+# general Page TS Config
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:pimentconfig/Configuration/TsConfig/BackendLayouts/" extensions="tsconfig">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:pimentconfig/Configuration/TsConfig/Page/" extensions="tsconfig">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:pimentconfig/Configuration/TsConfig/Extensions/Gridelements/" extensions="tsconfig">
+
+admPanel.hide = 0

@@ -1,0 +1,14 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: 'EXT:pimentconfig/Resources/Private/Content/Form/Templates/'
+                partialRootPaths:
+                  20: 'EXT:pimentconfig/Resources/Private/Content/Form/Partials/'
+                layoutRootPaths:
+                  20: 'EXT:my_site_package/Resources/Private/Layouts/Form/Frontend/'

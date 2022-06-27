@@ -1,0 +1,32 @@
+
+plugin.tx_trainingcaces {
+    view {
+        templateRootPaths.0 = EXT:trainingcaces/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_trainingcaces.view.templateRootPath}
+        partialRootPaths.0 = EXT:trainingcaces/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_trainingcaces.view.partialRootPath}
+        layoutRootPaths.0 = EXT:trainingcaces/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_trainingcaces.view.layoutRootPath}
+        widget {
+            TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
+                templateRootPaths = EXT:trainingcaces/Resources/Private/Templates/
+            }
+        }
+    }
+
+
+    persistence {
+        storagePid = {$plugin.tx_trainingcaces.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+        # Should be on by default, but can be disabled if all action in the plugin are uncached
+        requireCHashArgumentForActionArguments = 1
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}

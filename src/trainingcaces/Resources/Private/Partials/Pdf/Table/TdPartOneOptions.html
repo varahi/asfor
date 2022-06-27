@@ -1,0 +1,36 @@
+<f:if condition="
+    {exam.type.uid} == 1 && {exam.category.uid} == 1 ||
+    {exam.type.uid} == 2 && {exam.category.uid} == 2 ||
+    {exam.type.uid} == 4 && {exam.category.uid} == 4">
+
+    <f:then>
+        <f:if condition="{exam.theoryResult} >= 50">
+            <f:then>
+                <div style="font-weight: normal; font-size: 6pt; margin-bottom: 0;">Oui</div>
+            </f:then>
+            <f:else>
+                <div style="font-weight: normal; font-size: 6pt; margin-bottom: 0;">
+                    <f:if condition="{exam.type.id} ==  {settings.type.R489}">
+                        <f:then></f:then>
+                        <f:else>Non</f:else>
+                    </f:if>
+                </div>
+            </f:else>
+        </f:if>
+    </f:then>
+    <f:else>
+        <f:if condition="{exam.theoryResult} >= 100">
+            <f:then>
+                <div style="font-weight: normal; font-size: 6pt; margin-bottom: 0;">Oui</div>
+            </f:then>
+            <f:else>
+                <div style="font-weight: normal; font-size: 6pt; margin-bottom: 0;">
+                    <f:if condition="{exam.type.id} ==  {settings.type.R489}">
+                        <f:then></f:then>
+                        <f:else>Non</f:else>
+                    </f:if>
+                </div>
+            </f:else>
+        </f:if>
+    </f:else>
+</f:if>

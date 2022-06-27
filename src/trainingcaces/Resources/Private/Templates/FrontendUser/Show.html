@@ -1,0 +1,140 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:pdf="http://typo3.org/ns/Bithost/Pdfviewhelpers/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <f:flashMessages />
+    <f:render partial="FormErrors" />
+    <div id="middle-office">
+        <div id="page-pdf">
+            <div class="row">
+                <div class="left-row column">
+                    <div class="info-top">
+                        <f:if condition="{candidate.photo}">
+                            <f:then>
+                                <div class="image">
+                                    <!-- width="135" height="200" -->
+                                    <f:cache.disable>
+                                        <a class="image-popup-vertical" href="{userPhoto}">
+                                            <img width="135" height="200" title="{candidate.firstName} {candidate.lastName}" alt="{candidate.firstName} {candidate.lastName}"
+                                                 src="{userPhoto}">
+                                        </a>
+                                    </f:cache.disable>
+                                    <div class="rotate rotate-left">
+                                        <f:link.action action="rotateUserImage" noCache="true" title="{f:translate(id:'tx_trainingcaces.left_rotate_image')}"
+                                                       arguments="{user: candidate, degrees: '90'}">
+                                            <f:translate key="tx_trainingcaces.left_rotate_image" />
+                                        </f:link.action>
+                                    </div>
+                                    <div class="rotate rotate-right">
+                                        <f:link.action action="rotateUserImage" noCache="true" title="{f:translate(id:'tx_trainingcaces.right_rotate_image')}"
+                                                       arguments="{user: candidate, degrees: '-90'}">
+                                            <f:translate key="tx_trainingcaces.right_rotate_image" />
+                                        </f:link.action>
+                                    </div>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <p><f:translate key="tx_trainingcaces.no_image" /></p>
+                            </f:else>
+                        </f:if>
+                        <div class="right">
+                            <p class="title">{candidate.firstName} {candidate.lastName}</p>
+                            <f:if condition="{candidate.dateOfBirth}">
+                                <p>
+                                    <f:translate key="tx_trainingcaces.born_the" />
+                                    <f:format.date format="{f:translate(key:'tx_trainingcaces.format_date')}">{candidate.dateOfBirth}</f:format.date>
+                                </p>
+                            </f:if>
+                        </div>
+                    </div>
+                    <div class="info-bottom">
+                        <p>
+                            <v:condition.string.contains needle="R482" haystack="{exam.type.name -> f:for(each: '{exams}', as: 'exam')}">
+                                <f:link.action class="bt-pdf2" action="downloadPdf" title="{f:translate(id:'tx_trainingcaces.print_the_map')}"
+                                               arguments="{candidate: candidate, type: '{settings.type.R482}'}">
+                                    <f:translate key="tx_trainingcaces.print_the_map" /> R482 <br /><br />
+                                </f:link.action>
+                            </v:condition.string.contains>
+
+                            <v:condition.string.contains needle="R486" haystack="{exam.type.name -> f:for(each: '{exams}', as: 'exam')}">
+                                <f:link.action class="bt-pdf2" action="downloadPdf" title="{f:translate(id:'tx_trainingcaces.print_the_map')}"
+                                               arguments="{candidate: candidate, type: '{settings.type.R486}'}">
+                                    <f:translate key="tx_trainingcaces.print_the_map" /> R486 <br /><br />
+                                </f:link.action>
+                            </v:condition.string.contains>
+
+                            <v:condition.string.contains needle="R489" haystack="{exam.type.name -> f:for(each: '{exams}', as: 'exam')}">
+                                <f:link.action class="bt-pdf2" action="downloadPdf" title="{f:translate(id:'tx_trainingcaces.print_the_map')}"
+                                               arguments="{candidate: candidate, type: '{settings.type.R489}'}">
+                                    <f:translate key="tx_trainingcaces.print_the_map" /> R489 <br /><br />
+                                </f:link.action>
+                            </v:condition.string.contains>
+
+                            <v:condition.string.contains needle="R490" haystack="{exam.type.name -> f:for(each: '{exams}', as: 'exam')}">
+                                <f:link.action class="bt-pdf2" action="downloadPdf" title="{f:translate(id:'tx_trainingcaces.print_the_map')}"
+                                               arguments="{candidate: candidate, type: '{settings.type.R490}'}">
+                                    <f:translate key="tx_trainingcaces.print_the_map" /> R490 <br /><br />
+                                </f:link.action>
+                            </v:condition.string.contains>
+                        </p>
+                        <p>
+                            <f:link.action class="bt-blue" action="list" controller="Exam"><f:translate key="tx_trainingcaces.return" /></f:link.action>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="right-row column">
+                    <div class="content">
+                        <v:condition.string.contains needle="R482" haystack="{exam.type.name -> f:for(each: '{exams}', as: 'exam')}">
+                            <f:render partial="User/ExamForm" arguments="{_all}" section="R482" />
+                            <br /><hr />
+                        </v:condition.string.contains>
+
+                        <v:condition.string.contains needle="R486" haystack="{exam.type.name -> f:for(each: '{exams}', as: 'exam')}">
+                            <f:render partial="User/ExamForm" arguments="{_all}" section="R486" />
+                            <br /><hr />
+                        </v:condition.string.contains>
+
+                        <v:condition.string.contains needle="R489" haystack="{exam.type.name -> f:for(each: '{exams}', as: 'exam')}">
+                            <f:render partial="User/ExamForm" arguments="{_all}" section="R489" />
+                            <br /><hr />
+                        </v:condition.string.contains>
+
+                        <v:condition.string.contains needle="R490" haystack="{exam.type.name -> f:for(each: '{exams}', as: 'exam')}">
+                            <f:render partial="User/ExamForm" arguments="{_all}" section="R490" />
+                            <br /><hr />
+                        </v:condition.string.contains>
+                        <p><i><f:translate key="tx_trainingcaces.generate_number_info" /></i></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.image-popup-vertical').magnificPopup({
+                type: 'image',
+                closeOnContentClick: true,
+                mainClass: 'mfp-img-mobile',
+                image: {
+                    verticalFit: true
+                }
+            });
+            // init plugin (with callback)
+            $('.clearable').clearSearch({ callback: function() { console.log("cleared"); } } );
+            $('.clearable-date').clearSearch({ callback: function() { console.log("cleared"); } } );
+            // update value
+            //$('.clearable').val('sample value').change();
+            // change width
+            $('.clearable').width('190px').change();
+            $('.clearable-date').width('110px').change();
+        });
+    </script>
+
+</f:section>
+</html>

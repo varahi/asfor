@@ -1,0 +1,31 @@
+# Page TSConfig:
+
+tx_gridelements.overruleRecords = 1
+tx_gridelements.setup {
+    # ID of Element
+    Grid_2Cols {
+        title = LLL:EXT:pimentconfig/Resources/Private/Language/locallang_db.xlf:gridelement.two_columns_title
+        description = LLL:EXT:pimentconfig/Resources/Private/Language/locallang_db.xlf:gridelement.two_columns_description
+        flexformDS = FILE:EXT:pimentconfig/Configuration/FlexForms/01_two_columns.xml
+        icon = EXT:pimentconfig/Resources/Public/Icons/icon.gif
+        topLevelLayout = 1
+        config {
+            colCount = 2
+            rowCount = 1
+            rows {
+                1 {
+                    columns {
+                        1 {
+                            name = LLL:EXT:pimentconfig/Resources/Private/Language/locallang_db.xlf:gridelement.left_column
+                            colPos = 0
+                        }
+                        2 {
+                            name = LLL:EXT:pimentconfig/Resources/Private/Language/locallang_db.xlf:gridelement.right_column
+                            colPos = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

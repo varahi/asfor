@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <ROOT type="array">
+        <type>array</type>
+        <el type="array">
+            <hide_row>
+                <TCEforms type="array">
+                    <label>Hide row</label>
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </hide_row>
+            <additional_class>
+                <TCEforms type="array">
+                    <label>Additional class</label>
+                    <config>
+                        <type>input</type>
+                        <size>48</size>
+                        <eval>trim</eval>
+                    </config>
+                </TCEforms>
+            </additional_class>
+        </el>
+    </ROOT>
+</T3DataStructure>

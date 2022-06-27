@@ -1,0 +1,30 @@
+<pdf:html>
+    <table cellpadding="3" border="0">
+        <tr>
+            <td style="color: #707070; font-size: 8pt; border-bottom: 1px solid #eaeaea;">Titulaire:
+                <span style="font-size: 8pt">{candidate.firstName} {candidate.lastName}</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="color: #707070; font-size: 8pt; border-bottom: 1px solid #eaeaea;">Date de naissance:
+                <span style="font-size: 8pt"><f:format.date format="%d/%m/%Y">{candidate.dateOfBirth}</f:format.date></span>
+            </td>
+        </tr>
+        <tr>
+            <td style="color: #707070; font-size: 8pt; text-align: center;">Serge BOICHOT:
+                <span style="font-size: 8pt">Directeur</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pdf:image src="EXT:trainingcaces/Resources/Public/Images/signature-boichot.png" padding="{top: 17}" />
+            </td>
+        </tr>
+    </table>
+</pdf:html>
+
+<pdf:image src="EXT:trainingcaces/Resources/Public/Svg/logo-ASFOR-CCI-bleu.jpg" width="100" />
+
+<pdf:html>
+    <div style="color: #707070; font-size: 8pt; text-align: center;">ZA la Gandière - 05110 LA SAULCE<br />04 92 53 71 01 <br />formation@asfor.net</div>
+</pdf:html>

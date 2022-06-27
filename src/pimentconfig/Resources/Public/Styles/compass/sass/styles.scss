@@ -1,0 +1,349 @@
+
+@import "styles.variable.scss";
+@import "mixin.scss";
+@import "config.scss";
+
+/**** HOME STYLE ****/
+/**** FIN HOME STYLE ****/
+
+body{
+	background-color: #fff !important;
+	overflow-x: auto;
+	min-width: 1200px;
+}
+
+#header{
+	height: 85px;
+	background-color: $blue;
+	#logo{
+		margin: 0px auto;
+		padding: 16px 0;
+		text-align: center;
+		img{
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+
+#wrap{
+	padding: 120px 100px;
+}
+#middle-office{
+	#search-top{
+		text-align: right;
+		margin-bottom: 35px;
+		.form-std{
+			.input-flex{
+				@include flexbox();
+				@include flexbox-wrap(wrap);
+				@include flexbox-spaces(flex-end);
+				>div{
+					margin: auto 0 auto 55px;
+				}
+				.bt-right{
+					margin-left: 100px;
+					a{
+						vertical-align: middle;
+						margin-left: 25px;
+					}
+				}
+				input{
+					font-size: 12px;
+					font-family: $lato;
+					color: $black;
+					border: 1px solid $grey;
+					padding: 15px 20px;
+				}
+				input[type="submit"]{
+					background-color: $blue;
+					color: #fff;
+					font-size: 12px;
+					text-transform: uppercase;
+					padding: 14.5px 20px;
+					width: 135px;
+					font-weight: 700;
+					&:hover{
+						background-color: darken($blue, 10%);
+					}
+				}
+			}
+		}
+	}
+	.table-std{
+		th{
+			color: $blue;
+			text-align: center;
+			padding: 5px 30px;
+			font-size: 14px;
+			font-family: $lato;
+			background: url('../Images/arrow_bottom.svg') no-repeat 10px 7px;
+			border-left: 1px solid $grey;
+			border-bottom: 1px solid $grey;
+			&:first-child{
+				border-left: none;
+			}
+		}
+		td{
+			font-size: 12px;
+			font-family: $lato;
+			color: $black;
+			text-align: center;
+			vertical-align: middle;
+			padding: 10px 20px;
+			border-left: 1px solid $grey;
+			@include transition(background, 0.3s, 0s);
+			&:first-child{
+				border-left: none;
+			}
+			span, a{
+				font: inherit;
+				color: inherit;
+				vertical-align: middle;
+			}
+			.bt-pdf{
+				width: 12px;
+				background-size: 100% auto;
+				margin-left: 10px;
+				vertical-align: middle;
+			}
+		}
+		tr{
+			&:hover td{
+				background-color: lighten($grey, 55%);
+			}
+		}
+	}
+	#page-pdf{
+		.row{
+			@include flexbox();
+			@include flexbox-wrap(wrap);
+			.column{
+				flex: 1;
+				width: 50%;
+				padding: 0 15px;
+			}
+			.left-row{
+				flex: none;
+				width: 525px;
+				padding-right: 40px;
+				.info-top{
+					.image{
+						float: left;
+						margin-right: 40px;
+						width: 135px;
+						img{
+							width: 100%;
+							height: auto;
+						}
+					}
+					.right{
+						overflow: hidden;
+						.title{
+							font-size: 32px;
+							margin: 0 0 20px 0;
+							font-family: $lato;
+							font-weight: 700;
+							color: $blue;
+						}
+						p{
+							font-size: 24px;
+							font-family: $lato;
+						}
+					}
+					&:after{
+						display: block;
+						content: "";
+						clear: both;
+					}
+				}
+				.info-bottom{
+					margin-top: 130px;
+					.bt-pdf2{
+						background: url('../Images/icon_pdf.svg') no-repeat left center;
+						background-size: 65px;
+						padding: 28px 0 28px 100px;
+						font-size: 24px;
+						font-family: $lato;
+						display: inline-block;
+					}
+					.bt-blue{
+						margin-top: 120px;
+					}
+				}
+			}
+			.right-row{
+				h1{
+					font-size: 32px;
+					font-weight: 700;
+					margin: 0 0 30px 0;
+				}
+				.table-std{
+					th, td{
+						border: none;
+					}
+					th{
+						background: none;
+						span{
+							display: block;
+							font-size: 10px;
+							font-weight: 700;
+							color: $black;
+						}
+					}
+					td{
+						font-weight: 700;
+						font-size: 12px;
+						span{
+							display: block;
+							font-weight: 400;
+							font-size: inherit;
+						}
+						input{
+							width: 120px;
+							height: 35px;
+							font-size: 12px;
+							font-weight: 700;
+							border: 1px solid $grey;
+							padding: 10px 10px;
+							text-align: center;
+						}
+						&:first-child{
+							font-size: 18px;
+							font-weight: 700;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#wrap-content{
+	#main-content{
+		.list-news{
+			.page-navigation{
+				text-align: right;
+				>p{
+					display: none;
+				}
+				&:first-of-type{
+					display: none;
+				}
+				.f3-widget-paginator{
+					float: none;
+					text-align: right;
+					display: inline-block;
+					border-radius: 4px;
+					border: 1px solid $grey;
+					overflow: hidden;
+					li{
+						display: inline-block;
+						float: none;
+						width: 35px;
+						height: 35px;
+						line-height: 33px;
+						font-size: 14px;
+						color: $black;
+						margin: 0px;
+						padding: 0;
+						font-family: $lato;
+						border-left: 1px solid rgba($grey,0.4);
+						text-align: center;
+						&:first-child{
+							border: none;
+						}
+						a{
+							color: $grey;
+							text-decoration: none;
+							font: inherit;
+							width: 100%;
+							@include transition(all, 0.3s, 0s);
+							&:hover{
+								background-color: $blue;
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+			.item{
+				border-top: 1px solid $blue;
+				padding: 40px 0;
+				&:first-child{
+					border: none;
+					padding-top: 0;
+				}
+				&:after{
+					content: "";
+					clear: both;
+					display: block;
+				}
+				.image{
+					float: left;
+					margin-right: 20px;
+				}
+				.info{
+					overflow: hidden;
+					.date{
+						color: $grey;
+						margin: 0 0 10px 0;
+						font-size: 12px;
+					}
+					h2{
+						margin: 0 0 10px 0;
+						*{
+							font: inherit;
+							color: inherit;
+						}
+					}
+					.link{
+						margin: 0;
+						a{
+							color: $blue;
+						}
+					}
+				}
+			}
+		}
+		.grid-container{
+			.frame{
+				margin: 0;
+			}
+			.grid-row{
+				margin: 0 -15px;
+				@include flexbox();
+				@include flexbox-wrap(wrap);
+				.grid-column{
+					flex: 1;
+					margin: 0 15px;
+					.ce-gallery{
+						img{
+							max-width: 100%;
+							height: auto;
+						}
+						.image-caption{
+							margin-top: 30px;
+							p{
+								font-weight: 700;
+								font-size: 18px;
+								text-align: center;
+							}
+						}
+						&:after{
+							content: "";
+							clear: both;
+							display: block;
+						}
+					}
+					p, span, li{
+						color: $grey;
+						word-wrap: break-word;
+					}
+				}
+			}
+		}
+	}
+}
+
+@import "styles.repeat.scss";
